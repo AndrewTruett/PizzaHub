@@ -1,0 +1,14 @@
+git push : use this command to get the most revent changes to the online repository. Do this before you make changes to the repository.
+
+git add filename.extension : this command adds the specified file to the staging area, should immediately be followed by a git commit.
+
+git commit -m "commit message" : this command commits the file specified in git add to the index. Commits should be made whenever you make a change *that works*
+	this includes even small changes (such as adding a function). Put meaningful messages.
+
+git push origin master : this command pushes all the commits to the remote online repository. After this command is executed, you should be able to see the changes
+	on github.
+
+git fetch : 
+
+Useful links: http://rogerdudler.github.io/git-guide/
+
