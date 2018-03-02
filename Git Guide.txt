@@ -5,6 +5,9 @@ git add filename.extension : this command adds the specified file to the staging
 git commit -m "commit message" : this command commits the file specified in git add to the index. Commits should be made whenever you make a change *that works*
 	this includes even small changes (such as adding a function). Put meaningful messages.
 
+git rm filename.extension : this command is used to remove files from the repository. We will most often be creating and updating existing files, but this
+	command may come up.
+
 git push origin master : this command pushes all the commits to the remote online repository. After this command is executed, you should be able to see the changes
 	on github.
 
