@@ -1,4 +1,4 @@
-git push : use this command to get the most revent changes to the online repository. Do this before you make changes to the repository.
+git pull : use this command to get the most revent changes to the online repository. Do this before you make changes to the repository.
 
 git add filename.extension : this command adds the specified file to the staging area, should immediately be followed by a git commit.
 
@@ -15,5 +15,7 @@ git fetch :
 
 Note: for add and rm, filenames with spaces in them will require '' around them.
 
-Useful links: http://rogerdudler.github.io/git-guide/
+Useful links: 
+[1] http://rogerdudler.github.io/git-guide/
+[2] https://www.youtube.com/watch?v=Y9XZQO1n_7c&index=1&list=PL0OuEn8DzmfIGazfJ91uH1a9oLYXgjgRi&t=516s
 
