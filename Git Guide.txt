@@ -13,5 +13,7 @@ git push origin master : this command pushes all the commits to the remote onlin
 
 git fetch : 
 
+Note: for add and rm, filenames with spaces in them will require '' around them.
+
 Useful links: http://rogerdudler.github.io/git-guide/
 
