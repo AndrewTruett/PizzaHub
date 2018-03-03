@@ -1,4 +1,4 @@
-git pull : use this command to get the most revent changes to the online repository. Do this before you make changes to the repository.
+git pull : use this command to get the most recent changes to the online repository. Do this before you make changes to the repository.
 
 git add filename.extension : this command adds the specified file to the staging area, should immediately be followed by a git commit.
 
