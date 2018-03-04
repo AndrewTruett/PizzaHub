@@ -19,3 +19,8 @@ Useful links:
 [1] http://rogerdudler.github.io/git-guide/
 [2] https://www.youtube.com/watch?v=Y9XZQO1n_7c&index=1&list=PL0OuEn8DzmfIGazfJ91uH1a9oLYXgjgRi&t=516s
 
+
+Useful software:
+[1] https://desktop.github.com/      [Github Desktop]
+	//This is basically the better GUI version for your GIT. If you want to use bash on this one, you would have to use Win. PowerShell.
+
