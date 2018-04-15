@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
+<!--        Title of the Page-->
+        <title>Pizza Hub | Order pizzas from top rated manhattan stores</title>
+        
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+<!--        css-->
+<!--        <link href="css/searchButtonStore.css" rel="stylesheet"> -->
+        <link href="css/phStyle.css" rel="stylesheet"> 
+        <link href="css/searchBar.css" rel="stylesheet"> 
+        <!-- Load icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+    </head>
+    
+    <body>
+
+        <div class="topbar">
+            <div class="topbar-section" id="logo">
+                <a href=index.html>
+                <img src="phpaste.png" width="380px">
+            </a>
+            </div>
+            
+            
+            <div class="field" id="searchform">
+              <input type="text" id="searchterm" placeholder="Looking for a store?..." />
+              <button type="button" id="search">Search </button>
+            </div>
+        </div>   <!--        end of topbar-->
+
+
+<!--            <script class="cssdeck" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>-->
+            
+    
+            
+
+            
+  <div class="map-wrap">
+      <div class="map-text">
+            <b>Select your favorite midtown pizza🍕place from below..</b>
+      </div>
+  
+      <div id="map">
+            <script>
+                function initMap(){
+                  // Map options
+                  var options = {
+                    zoom:15,
+                    center:{lat:40.753380,lng:-73.986413}
+                  }
+
+                  // New map
+                  var map = new google.maps.Map(document.getElementById('map'), options);
+
+                  // Listen for click on map
+                  google.maps.event.addListener(map, 'click', function(event){
+                    // Add marker
+                    addMarker({coords:event.latLng});
+                  });
+
+                }
+            </script>
+                <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7fzBxtcIjbigdPUz26LNwKBOz3H8j2bk&callback=initMap"
+
+              type="text/javascript"></script>
+          
+        </div>
+      
+    </div> <!--        end of map-->
+            
+            
+
+        
+        
+        
+        
+    </body>
+    
+</html>
