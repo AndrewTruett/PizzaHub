@@ -1,0 +1,17 @@
+.search-wrap
+{
+    position: fixed;
+    top: 8.3%;
+    
+    height: auto;
+    width: 100%;
+}
+
+.s-summary
+{
+    border-bottom-color: gray;
+    border-bottom: 2px solid;
+    
+    height: 40px;
+    width: auto;
+}
