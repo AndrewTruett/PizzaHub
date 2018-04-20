@@ -20,7 +20,13 @@
 		<link href="css/store_page.css" rel="stylesheet">
         
         <!-- Load icon library -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+        <script>
+            $(document).ready(function () {
+                $('.dropdown-toggle').dropdown();
+            });
+        </script>
         
     </head>
     
@@ -42,10 +48,188 @@
 			<!--update this later: onclick should be updated-->
             <button type="button" id="search" onclick="window.location.href='search_results.html'">Search</button>
             </div>
-		  </div>
-			
+		  </div>		
 		</div>
+        <!--End navbar-->
+          
+        <div class="row store-name-row">
+            <div class="col-6">
+                <p class="store-heading">Store name here</p>
+            </div>
+            
+            <div class="col-2 text-center">
+                <p class="rating">Food rating</p>
+            </div>
+            
+            <div class="col-2 text-center">
+                <p class="rating">Cook rating</p>
+            </div>
+            
+            <div class="col-2 text-center">
+                <p class="rating">Delivery Rating</p>
+            </div> 
+        </div>  
+          
+        <!--Select food-->
+        <div class="row">
+            <!--Popular items and beverages-->
+            <div class="col-4">
+                <!--Popular items-->
+                <div class="row">
+                    <div class="col text-center">
+                        <p class="panel-heading">Our Top Items</p>
+                        <div class="list-group">
+                            <a href="#" class="list-group-item list-group-item-action sub-item">
+                                Cheese Pizza
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action sub-item">
+                                Pepperoni Pizza
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action sub-item">
+                                BBQ Chicken Pizza
+                            </a>
+                        </div>
+                        <button type="button" class="btn btn-dark add-button">>></button>
+                    </div> 
+                </div>
+                
+                <hr>
+                
+                <!--Beverages-->
+                <div class="row">
+                    <div class="col text-center">
+                        <p class="panel-heading">Beverages</p>
+                        <div class="list-group">
+                            <a href="" class="list-group-item list-group-item-action sub-item">
+                                Coke
+                            </a>
+                            <a href="" class="list-group-item list-group-item-action sub-item">
+                                Pepsi
+                            </a>
+                            <a href="" class="list-group-item list-group-item-action sub-item">
+                                Root Beer
+                            </a>
+                            <a href="" class="list-group-item list-group-item-action sub-item">
+                                Lemonade
+                            </a>
+                            <a href="" class="list-group-item list-group-item-action sub-item">
+                                Water
+                            </a>
+                        </div>
+                        <button type="button" class="btn btn-dark add-button">>></button>
+                    </div> 
+                </div>
+            </div>
+            
+            <!--Create pizza-->
+            <div class="col-4 text-center">
+                <div class="row">
+                    <div class="col text-center">
+                        <p class="panel-heading">Create Your Own Pizza</p>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-6">
+                        <p class="sub-item">Dough:</p>
+                    </div>
+                    
+                    <div class="col-6">
+                        <select>
+                                <option value="stuffed crust">Stuffed Crust</option>
+                                <option value="ny style">New York Style</option>
+                                <option value="regular">Regular</option>
+                            </select>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-6">
+                        <p class="sub-item">Topping:</p>
+                    </div>
+                    
+                    <div class="col-6">
+                        <select>
+                            <option value="plain">Plain</option>
+                            <option value="pepperoni">Pepperoni</option>
+                            <option value="onions">Onions</option>
+                            <option value="onions">More options</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-6">
+                        <p class="sub-item">Cook:</p>
+                    </div>
+                    
+                    <div class="col-6">
+                        <select>
+                            <option value="andrew">Andrew 5/5</option>
+                            <option value="tahsin">Tahsin 0/5</option>
+                            <option value="farhan">Farhan 0/5</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col">
+                        <p class="panel-heading">Special Instructions</p>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col">
+                        <textarea rows="7" cols="50"></textarea>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col">
+                        <button type="button" class="btn btn-dark add-button">>></button>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <!--Shopping cart-->
+            <div class="col-4">
+                <div class="row">
+                    <div class="col text-center">
+                        <p class="panel-heading">Shopping Cart</p>
+                        <p class="sub-item">Items</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col text-center">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Cras justo odio</li>
+                            <li class="list-group-item">Dapibus ac facilisis in</li>
+                            <li class="list-group-item">Morbi leo risus</li>
+                            <li class="list-group-item">Porta ac consectetur ac</li>
+                            <li class="list-group-item">Vestibulum at eros</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row check-out">
+                    <div class="col-6">
+                        <p class="sub-item">Total: $</p>
+                    </div>
+                    <div class="col-6">
+                        <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col text-center">
+                        <button type="button" class="btn btn-dark add-button">Checkout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 	  </div>
 		
 	</body>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
 </html>
