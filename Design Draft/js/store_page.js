@@ -4,7 +4,7 @@ $(document).ready(function() {
         if(order == "")
             alert("Please make a selection.");
         else
-        $(".list-group-flush").append('<li class="list-group-item">'+ order +'</li>');
+        $(".list-group-flush").append('<li class="list-group-item">'+ order +'<button type="button" class="btn btn-link">Remove</button></li>');
     });
     
     $("#add-bvg-btn").click(function(){
@@ -12,7 +12,7 @@ $(document).ready(function() {
         if(order == "")
             alert("Please make a selection.");
         else
-        $(".list-group-flush").append('<li class="list-group-item">'+ order +'</li>');
+        $(".list-group-flush").append('<li class="list-group-item">'+ order +'<button type="button" class="btn btn-link">Remove</button></li>');
     });
     
     
