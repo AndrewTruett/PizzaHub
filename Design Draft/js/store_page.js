@@ -15,6 +15,14 @@ $(document).ready(function() {
         $(".list-group-flush").append('<li class="list-group-item">'+ order +'<button type="button" class="btn btn-link">Remove</button></li>');
     });
     
+    $("#add-menu-item-btn").click(function(){
+        var order = $("#menu-row a.active").text();
+        if(order == "")
+            alert("Please make a selection.");
+        else
+        $(".list-group-flush").append('<li class="list-group-item">'+ order +'<button type="button" class="btn btn-link">Remove</button></li>');
+    });
+    
     
     //Handling of active list items
     $("a").on("click", function(e){

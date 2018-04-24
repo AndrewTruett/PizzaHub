@@ -120,7 +120,7 @@
                 </div>
             </div>
             
-            <!--Create pizza-->
+            <!--Create pizza and Menu-->
             <div class="col-4 text-center">
                 <div class="row">
                     <div class="col text-center">
@@ -188,11 +188,52 @@
                         <button type="button" class="btn btn-dark add-button" id="add-spec-item-btn">>></button>
                     </div>
                 </div>
+                
+                <hr>
+                
+                <!--Menu row-->
+                <div class ="row" id="menu-row">
+                    <div class="col">
+                        <p class="panel-heading">Menu</p>
+                        <div class="list-group">
+                            <a href="#" class="list-group-item list-group-item-action sub-item" onclick="return false">
+                                Cheese Pizza
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action sub-item" onclick="return false">
+                                Pepperoni Pizza
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action sub-item" onclick="return false">
+                                BBQ Chicken Pizza
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action sub-item" onclick="return false">
+                                Sausage Pizza
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action sub-item" onclick="return false">
+                                Meatball Pizza
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action sub-item" onclick="return false">
+                                More items here
+                            </a>
+                        </div>
+                        <button type="button" class="btn btn-dark add-button" id="add-menu-item-btn">>></button>
+                    </div>
+                </div>
             </div>
             
             
-            <!--Shopping cart-->
+            <!--Shopping cart col-->
             <div class="col-4">
+                <!--Address row-->
+                <div class="row">
+                    <div class="col-6">
+                        <p class="sub-item">Your Address:</p>
+                    </div>
+                    <div class="col-6">
+                        <p class="sub-item">123 Road St, Manhattan New York 10027</p>
+                    </div>
+                </div>
+                
+                <!-- Cart row-->
                 <div class="row">
                     <div class="col">
                         <p class="panel-heading text-center">Shopping Cart</p>
@@ -208,19 +249,13 @@
                 
                 <hr>
                 
-                <div class="row check-out">
+                <div class="row check-out"> 
+                    <!--Checkout row-->
                     <div class="col-6">
-                        <p class="sub-item">Your Address:</p>
-                        <p class="sub-item">Total: $</p>
+                        <p class="sub-item">Total:</p>
                     </div>
                     <div class="col-6">
-                        <p class="sub-item">123 Road St, Manhattan New York 10027</p>
                         <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col text-center">
-                        <button type="button" class="btn btn-dark add-button" id="checkout-btn">Checkout</button>
                     </div>
                 </div>
             </div>
