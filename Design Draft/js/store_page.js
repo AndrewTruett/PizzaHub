@@ -45,14 +45,6 @@ $(document).ready(function() {
             var newPrice = oldPrice - prevSelectedPrice + newSelectedPrice;
             $("#custom-price").text("$"+newPrice);
     });
-
-    
-    
-    $("#topping-select").change(function() {
-        var str = $("#topping-select option:selected").text();
-        var num = str.match(/\$(\d+)/);
-        alert(num[1]);
-    });
     
     //Handling of active list items
     $("a").on("click", function(e){
