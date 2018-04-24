@@ -50,6 +50,10 @@ $(document).ready(function() {
     });
     
     $(".checkout-items ul").on("click", "#remove-btn", function(){
+        var removedPrice = parseInt($(this).parent().text().match(/\$(\d+)/)[1]);
+        var oldTotal = parseInt($("#total-label").text().match(/\$(\d+)/)[1]);
+        var newTotal = oldTotal - removedPrice;
+        $("#total-label").text("$"+newTotal);
         $(this).parent().remove();
         //Reduce price
     });
