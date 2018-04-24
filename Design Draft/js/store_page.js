@@ -4,7 +4,7 @@ $(document).ready(function() {
         if(order == "")
             alert("Please make a selection.");
         else
-            $(".list-group-flush").append('<li class="list-group-item">'+ order +'<button type="button" class="btn btn-link">Remove</button></li>');
+            $(".list-group-flush").append('<li class="list-group-item">'+ order +'<button type="button" class="btn btn-link" id="remove-btn">Remove</button></li>');
     });
     
     $("#add-bvg-btn").click(function(){
@@ -12,7 +12,7 @@ $(document).ready(function() {
         if(order == "")
             alert("Please make a selection.");
         else
-            $(".list-group-flush").append('<li class="list-group-item">'+ order +'<button type="button" class="btn btn-link">Remove</button></li>');
+            $(".list-group-flush").append('<li class="list-group-item">'+ order +'<button type="button" class="btn btn-link" id="remove-btn">Remove</button></li>');
     });
     
     $("#add-menu-item-btn").click(function(){
@@ -20,13 +20,17 @@ $(document).ready(function() {
         if(order == "")
             alert("Please make a selection.");
         else
-            $(".list-group-flush").append('<li class="list-group-item">'+ order +'<button type="button" class="btn btn-link">Remove</button></li>');
+            $(".list-group-flush").append('<li class="list-group-item">'+ order +'<button type="button" class="btn btn-link" id="remove-btn">Remove</button></li>');
     });
     
     $("#add-spec-item-btn").click(function(){
-        $(".list-group-flush").append('<li class="list-group-item">'+ 'Custom Item' +'<button type="button" class="btn btn-link">Remove</button></li>');
+        $(".list-group-flush").append('<li class="list-group-item">'+ 'Custom Item' +'<button type="button" class="btn btn-link" id="remove-btn">Remove</button></li>');
     });
     
+    $(".checkout-items ul").on("click", "#remove-btn", function(){
+        $(this).parent().remove();
+        //Reduce price
+    });
     
     //Handling of active list items
     $("a").on("click", function(e){
