@@ -24,7 +24,8 @@ $(document).ready(function() {
     });
     
     $("#add-spec-item-btn").click(function(){
-        $(".list-group-flush").append('<li class="list-group-item">'+ 'Custom Item' +'<button type="button" class="btn btn-link" id="remove-btn">Remove</button></li>');
+        var priceStr = $("#custom-price").text();//Get text of the <p>
+        $(".list-group-flush").append('<li class="list-group-item">'+ priceStr +' Custom Item' +'<button type="button" class="btn btn-link" id="remove-btn">Remove</button></li>');
     });
     
     $(".checkout-items ul").on("click", "#remove-btn", function(){
