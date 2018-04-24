@@ -32,6 +32,27 @@ $(document).ready(function() {
         //Reduce price
     });
     
+    var prev;
+    $(".price-sensitive-select").focus(function() {
+        prev = this.value;
+        }).change(function() {
+            var priceStr = $("#custom-price").text();//Get text of the <p>
+            var oldPrice = parseInt(priceStr.match(/\$(\d+)/)[1]);//Convert to int
+        
+            var prevSelectedPrice = parseInt(prev);
+            var newSelectedPrice = parseInt($(this).val());
+            var newPrice = oldPrice - prevSelectedPrice + newSelectedPrice;
+            $("#custom-price").text("$"+newPrice);
+    });
+
+    
+    
+    $("#topping-select").change(function() {
+        var str = $("#topping-select option:selected").text();
+        var num = str.match(/\$(\d+)/);
+        alert(num[1]);
+    });
+    
     //Handling of active list items
     $("a").on("click", function(e){
         $(this).addClass("active");
