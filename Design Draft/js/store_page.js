@@ -5,6 +5,12 @@ $(document).ready(function() {
             alert("Please make a selection.");
         else
             $(".list-group-flush").append('<li class="list-group-item">'+ order +'<button type="button" class="btn btn-link" id="remove-btn">Remove</button></li>');
+        
+        var price = parseInt(order.match(/\$(\d+)/)[1]);
+        var oldTotal = parseInt($("#total-label").text().match(/\$(\d+)/)[1]);
+        var newTotal = oldTotal+price;
+        $("#total-label").text("$"+newTotal);
+        
     });
     
     $("#add-bvg-btn").click(function(){
@@ -13,6 +19,11 @@ $(document).ready(function() {
             alert("Please make a selection.");
         else
             $(".list-group-flush").append('<li class="list-group-item">'+ order +'<button type="button" class="btn btn-link" id="remove-btn">Remove</button></li>');
+        
+        var price = parseInt(order.match(/\$(\d+)/)[1]);
+        var oldTotal = parseInt($("#total-label").text().match(/\$(\d+)/)[1]);
+        var newTotal = oldTotal+price;
+        $("#total-label").text("$"+newTotal);
     });
     
     $("#add-menu-item-btn").click(function(){
@@ -21,11 +32,21 @@ $(document).ready(function() {
             alert("Please make a selection.");
         else
             $(".list-group-flush").append('<li class="list-group-item">'+ order +'<button type="button" class="btn btn-link" id="remove-btn">Remove</button></li>');
+        
+        var price = parseInt(order.match(/\$(\d+)/)[1]);
+        var oldTotal = parseInt($("#total-label").text().match(/\$(\d+)/)[1]);
+        var newTotal = oldTotal+price;
+        $("#total-label").text("$"+newTotal);
     });
     
     $("#add-spec-item-btn").click(function(){
         var priceStr = $("#custom-price").text();//Get text of the <p>
         $(".list-group-flush").append('<li class="list-group-item">'+ priceStr +' Custom Item' +'<button type="button" class="btn btn-link" id="remove-btn">Remove</button></li>');
+        
+        var price = parseInt(priceStr.match(/\$(\d+)/)[1]);
+        var oldTotal = parseInt($("#total-label").text().match(/\$(\d+)/)[1]);
+        var newTotal = oldTotal+price;
+        $("#total-label").text("$"+newTotal);
     });
     
     $(".checkout-items ul").on("click", "#remove-btn", function(){
@@ -53,3 +74,4 @@ $(document).ready(function() {
     });
     
   });
+
