@@ -58,19 +58,6 @@ $(document).ready(function() {
         //Reduce price
     });
     
-    /*var prev;
-    $(".price-sensitive-select").focus(function() {
-        prev = this.value;
-        }).change(function() {
-            var priceStr = $("#custom-price").text();//Get text of the <p>
-            var oldPrice = parseInt(priceStr.match(/\$(\d+)/)[1]);//Convert to int
-        
-            var prevSelectedPrice = parseInt(prev);
-            var newSelectedPrice = parseInt($(this).val());
-            var newPrice = oldPrice - prevSelectedPrice + newSelectedPrice;
-            $("#custom-price").text("$"+newPrice);
-    });*/
-    
     $(".price-sensitive-select").on("change", function(){
         var p1 = parseInt($("#topping-select").val());
         var p2 = parseInt($("#dough-select").val());
