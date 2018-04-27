@@ -58,7 +58,7 @@ $(document).ready(function() {
         //Reduce price
     });
     
-    var prev;
+    /*var prev;
     $(".price-sensitive-select").focus(function() {
         prev = this.value;
         }).change(function() {
@@ -69,6 +69,13 @@ $(document).ready(function() {
             var newSelectedPrice = parseInt($(this).val());
             var newPrice = oldPrice - prevSelectedPrice + newSelectedPrice;
             $("#custom-price").text("$"+newPrice);
+    });*/
+    
+    $(".price-sensitive-select").on("change", function(){
+        var p1 = parseInt($("#topping-select").val());
+        var p2 = parseInt($("#dough-select").val());
+        var newPrice = p1 + p2;
+        $("#custom-price").text("$"+newPrice);
     });
     
     //Handling of active list items
