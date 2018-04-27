@@ -28,7 +28,7 @@ body
     /*padding-right: 40px;*/
 }
 
-.add-button {
+.add-btn {
     margin: 15px;
     font-size: 22px;
 }
@@ -51,6 +51,14 @@ select {
 
 .check-out {
     margin: 15px;
+}
+
+.checkout-btn {
+    font-size: 24px;
+}
+
+.item-label {
+    font-size: 32px;
 }
 
 
