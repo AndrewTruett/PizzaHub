@@ -1,0 +1,9 @@
+.name-heading {
+    font-size: 48px;
+    float: left;
+}
+
+.name-row {
+    background-color: skyblue;
+    opacity: 1;/*Might change later*/
+}
