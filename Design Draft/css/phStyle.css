@@ -1,6 +1,9 @@
 /*cute font: for map text*/
 @import url('https://fonts.googleapis.com/css?family=Cute+Font');
 
+/*overlock font: for login body*/
+@import url('https://fonts.googleapis.com/css?family=Overlock');
+
 
 /*everything in body*/
 body 
@@ -71,3 +74,20 @@ body
     
     }
 
+
+.login-store-name
+{
+    width: 100%;
+    background-color: skyblue;
+    font-size: 220%;
+    color: black;
+    text-align: center;
+    font-family: 'Cute Font', cursive;
+    border-radius: 2%;
+}
+
+.login-body
+{
+    font-family: 'Overlock', cursive;
+    font-size: 120%;
+}
