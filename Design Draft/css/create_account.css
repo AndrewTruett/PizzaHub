@@ -12,10 +12,10 @@ body{
     margin: auto;
 }
 
-/*.form{
+.form{
     position: relative;
     z-index: 1;
-    background:#ffffff ;
+    background:rgba(240,255,240) ;
     max-width: 360px;
     margin: 0 auto 100px;
     padding: 45px;
@@ -35,7 +35,7 @@ body{
     box-sizing: border-box;
     font-size: 14px;
 }
-*/
+
 .form button:hover,.form.button:active{
     background: #43A047;
 }
