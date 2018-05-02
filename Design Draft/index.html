@@ -63,6 +63,46 @@
           
             </div>
 		  </div>
+                <!-- Login Modal -->
+                <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title login-store-name" id="loginModalLabel">Store Name Here</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body login-body">               
+                            <span class="col-4">Login as a </span> 
+                                <select class="col-8">
+                                  <option value="volvo">VIP / Member</option>
+                                  <option value="saab">Visitor</option>
+                                  <option value="opel">Manager</option>
+                                  <option value="audi">Cook</option>
+                                  <option value="audi">Delivery Guy</option>
+                                </select>
+
+                            <br/>
+                            <span class="col-4">Username </span>
+                            <input type="text" name="lastname" class="col-8">
+                            <br/>
+                            <span class="col-4">Password  </span>
+                            <input type="password" name="lastname" style="font-size: 100%" class="col-8">
+
+                            <br/>
+                            <br/>
+                            Not a member yet? <a href="">Create a new account</a>
+                            <br/> If you don't want to create an account, select login as a visitor and press login.
+
+                      </div>
+                      <div class="modal-footer login-body">
+                        <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-outline-success">Login</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 		  </div>
         
     </body>
