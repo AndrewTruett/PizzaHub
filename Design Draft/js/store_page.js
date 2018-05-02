@@ -73,3 +73,45 @@ $(document).ready(function() {
     
   });
 
+//Maybe add store name in the future
+function Order(name, numItems, timestamp) {
+    this.name = name;
+    this.numItems = numItems;
+    this.timestamp = timestamp;
+}
+
+function saveOrder() {
+    var numItems = $(".list-group-flush").children().length;
+    
+    if(numItems == 0)//User hasnt added anything to cart
+        alert("Please select something to purchase");
+    else {
+        //Get time
+        var today = new Date();
+        minutes = today.getMinutes();
+        if(minutes < 10)
+            minutes = '0'+minutes;
+        
+        today = today.getMonth()+1 + '/' + today.getDate() + '/' + today.getFullYear() + ' @ ' + today.getHours() + ':' + minutes;
+        
+        //Create order
+        var newOrder = new Order("Andrew", numItems, today);
+
+        if(localStorage.getItem("currentOrderID") == null)
+            localStorage.setItem("currentOrderID", 1);
+        
+        //alert(localStorage.getItem("currentOrderID"));
+        
+        var orderID = localStorage.getItem("currentOrderID");
+        localStorage.setItem("pendingOrder"+orderID, JSON.stringify(newOrder));
+        //Update orderID.
+        var newOrderID = parseInt(orderID) + 1;
+        localStorage.setItem("currentOrderID", newOrderID);
+
+        /*Test code
+        var test = localStorage.getItem("pendingOrder1");
+        alert(test);
+        */
+    }
+}
+
