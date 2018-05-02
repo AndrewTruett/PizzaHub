@@ -59,11 +59,11 @@ function initMap(){
       var markers = [
         {
           coords:garlicNewYorkPizzaBar,
-          content:'<span class="map-marker-info"> Garlic NY Pizza Bar | Rating : 4.78/5.00 </span>'
+          content:'<span class="mm-store-name"> Garlic NY Pizza Bar </span> </br> <span class="map-marker-body"> Rating : 4.78/5.00 </span>'
         },
         {
           coords:famousAmadeusPizza,
-          content:'Famous Amadeus Pizza | Rating : 4.50/5.00'
+          content:'<span class="mm-store-name">Famous Amadeus Pizza</span> </br> <span class="map-marker-body">Rating : 4.50/5.00</span>'
         },
         {
           coords:{lat:42.7762,lng:-71.0773}

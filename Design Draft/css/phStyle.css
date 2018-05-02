@@ -93,8 +93,15 @@ body
 }
 
 
-.map-marker-info
+.map-marker-body
 {
     font-family: 'Overlock', cursive;
     font-size: 150%;
+}
+
+.mm-store-name
+{
+    font-family: 'Cute Font', cursive;
+    font-size: 220%;
+    font-weight: bold;
 }
