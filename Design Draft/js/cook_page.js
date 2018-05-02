@@ -11,7 +11,6 @@ function checkForOrders() {
     $("#pending-orders").empty();
     
     var numOrders = localStorage.getItem("currentOrderID");
-    alert(numOrders);
     for(i = 1; i <= numOrders; i++) {
         var currOrder = JSON.parse(localStorage.getItem("pendingOrder"+i));
         if(currOrder != null) {
