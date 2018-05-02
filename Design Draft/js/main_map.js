@@ -36,30 +36,30 @@ function initMap(){
       var markers = [
         {
           coords:garlicNewYorkPizzaBar,
-          content:'<span class="mm-store-name"> Garlic NY Pizza Bar </span> </br> <span class="map-marker-body"> Rating : 4.78/5.00 </span>'
+          content:'<span class="mm-store-name"> Garlic NY Pizza Bar </span> </br> <span class="map-marker-body"> Rating : 4.78/5.00 </span></br></br><button type="button" class="btn btn-link" data-toggle="modal" data-target="#loginModal">Click here to login</button>'
         },
         {
           coords:famousAmadeusPizza,
-          content:'<span class="mm-store-name">Famous Amadeus Pizza</span> </br> <span class="map-marker-body">Rating : 4.50/5.00</span>'
+          content:'<span class="mm-store-name">Famous Amadeus Pizza</span> </br> <span class="map-marker-body">Rating : 4.50/5.00</span></br></br><button type="button" class="btn btn-link" data-toggle="modal" data-target="#loginModal">Click here to login</button>'
         },
           
         {
           coords: donHyder,
-          content: '<span class="mm-store-name">Don Hyder</span> </br> <span class="map-marker-body">Rating : 5.00/5.00</span>'
+          content: '<span class="mm-store-name">Don Hyder</span> </br> <span class="map-marker-body">Rating : 5.00/5.00</span></br></br><button type="button" class="btn btn-link" data-toggle="modal" data-target="#loginModal">Click here to login</button>'
         },
         {
           coords:littleItalyPizza,
-          content: '<span class="mm-store-name">Little Italy Pizza</span> </br> <span class="map-marker-body">Rating : 3.50/5.00</span>'
+          content: '<span class="mm-store-name">Little Italy Pizza</span> </br> <span class="map-marker-body">Rating : 3.50/5.00</span></br></br><button type="button" class="btn btn-link" data-toggle="modal" data-target="#loginModal">Click here to login</button>'
         },
           
         {
           coords:angelosPizza,
-          content: '<span class="mm-store-name">Angelos Pizza</span> </br> <span class="map-marker-body">Rating : 4.00/5.00</span>'
+          content: '<span class="mm-store-name">Angelos Pizza</span> </br> <span class="map-marker-body">Rating : 4.00/5.00</span></br></br><button type="button" class="btn btn-link" data-toggle="modal" data-target="#loginModal">Click here to login</button>'
         }
         ,
         {
           coords:mariellaPizza ,
-          content: '<span class="mm-store-name">Mariella Pizza</span> </br> <span class="map-marker-body">Rating : 4.60/5.00</span>'
+          content: '<span class="mm-store-name">Mariella Pizza</span> </br> <span class="map-marker-body">Rating : 4.60/5.00</span></br></br><button type="button" class="btn btn-link" data-toggle="modal" data-target="#loginModal">Click here to login</button>'
         }
             
       ];
