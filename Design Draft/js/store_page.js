@@ -100,7 +100,7 @@ function saveOrder() {
         if(localStorage.getItem("currentOrderID") == null)
             localStorage.setItem("currentOrderID", 1);
         
-        alert(localStorage.getItem("currentOrderID"));
+        //alert(localStorage.getItem("currentOrderID"));
         
         var orderID = localStorage.getItem("currentOrderID");
         localStorage.setItem("pendingOrder"+orderID, JSON.stringify(newOrder));
