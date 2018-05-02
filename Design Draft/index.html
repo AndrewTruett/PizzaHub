@@ -10,7 +10,7 @@
 		
 		<!--Bootstrap-->
 		<!-- Latest compiled and minified CSS -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
         
 		<!--css-->
 		<!--<link href="css/searchButtonStore.css" rel="stylesheet"> -->
@@ -53,25 +53,9 @@
 		  <!--Map row-->
 		  <div class="row">
 		    <div id="map">
-            <script>
-                function initMap(){
-                  // Map options
-                  var options = {
-                    zoom:15,
-                    center:{lat:40.753380,lng:-73.986413}
-                  }
-
-                  // New map
-                  var map = new google.maps.Map(document.getElementById('map'), options);
-
-                  // Listen for click on map
-                  google.maps.event.addListener(map, 'click', function(event){
-                    // Add marker
-                    addMarker({coords:event.latLng});
-                  });
-
-                }
-            </script>
+                
+                <script src="js/main_map.js"></script>
+                
                 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7fzBxtcIjbigdPUz26LNwKBOz3H8j2bk&callback=initMap"
 
               type="text/javascript"></script>
@@ -82,7 +66,9 @@
         
     </body>
 	
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
     
 </html>

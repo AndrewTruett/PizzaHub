@@ -3,7 +3,7 @@
     <head>
         
 		<!--Title of the Page-->
-        <title>Pizza Hub | Store name</title>
+        <title>Pizza Hub | Manager</title>
         
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,6 +18,8 @@
         <link href="css/searchBar.css" rel="stylesheet">
         <link href="css/search.css" rel="stylesheet">
 		<link href="css/store_page.css" rel="stylesheet">
+        <link href="css/cook_page.css" rel="stylesheet">
+        <link href="css/manager_page.css" rel="stylesheet">
         
         <!-- Load icon library -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -25,12 +27,12 @@
         
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
         <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
-        <script src="js/store_page.js"></script>
+        <script src="js/manager_page.js"></script>
         
     </head>
     
     <body>
-	  <div class="container-fluid">
+	 	  <div class="container-fluid">
 		<!--Navbar row-->
 		<div class="row">
 		  <div class="col-7 black-color">
@@ -50,7 +52,141 @@
 		  </div>		
 		</div>
         <!--End navbar-->
-           
+        
+        <div class="row name-row">
+            <div class="col-6">
+                <p class="name-heading">Manager name here</p>
+            </div>
+            
+            <div class="col-3">
+                <div class="row">
+                    <div class="col text-center">
+                        <p class="rating">Your Store Rating</p>    
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col text-center">
+                        <p class="rating">5.0</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-3">
+                <div class="row">
+                    <div class="col text-center">
+                        <p class="rating">Your payrate</p>    
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col text-center">
+                        <p class="rating">$25.00/hr</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--End of name row-->
+          
+        <div class="row">
+            <div class="col-5">
+                <p class="panel-heading">Reviews</p>
+                <ul class="list-group">
+                    <li class="list-group-item review-item">Review title 1<br><p class="sub-heading">
+                        Rating: 5/5<br>By: Andrew Truett<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eleifend quis ipsum id varius. Morbi accumsan erat vel tortor sagittis ultrices. Pellentesque vulputate felis sit amet hendrerit aliquet. Morbi dictum venenatis eleifend. Suspendisse sollicitudin nulla feugiat, vestibulum neque in, volutpat nibh. Sed ut venenatis dui. Nulla id lacus ac erat aliquet imperdiet nec congue neque. Quisque consectetur vulputate quam, a luctus urna malesuada eget.</p>
+                    </li>
+                    
+                    <li class="list-group-item review-item">
+                        Review title 1<br><p class="sub-heading">Rating: 5/5<br>By: Andrew Truett<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eleifend quis ipsum id varius. Morbi accumsan erat vel tortor sagittis ultrices. Pellentesque vulputate felis sit amet hendrerit aliquet. Morbi dictum venenatis eleifend. Suspendisse sollicitudin nulla feugiat, vestibulum neque in, volutpat nibh. Sed ut venenatis dui. Nulla id lacus ac erat aliquet imperdiet nec congue neque. Quisque consectetur vulputate quam, a luctus urna malesuada eget.</p>
+                    </li>
+                    
+                    <li class="list-group-item review-item">
+                        Review title 1<br><p class="sub-heading">Rating: 5/5<br>By: Andrew Truett<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eleifend quis ipsum id varius. Morbi accumsan erat vel tortor sagittis ultrices. Pellentesque vulputate felis sit amet hendrerit aliquet. Morbi dictum venenatis eleifend. Suspendisse sollicitudin nulla feugiat, vestibulum neque in, volutpat nibh. Sed ut venenatis dui. Nulla id lacus ac erat aliquet imperdiet nec congue neque. Quisque consectetur vulputate quam, a luctus urna malesuada eget.</p>
+                    </li>
+                    
+                    <li class="list-group-item review-item">
+                        Review title 1<br><p class="sub-heading">Rating: 5/5<br>By: Andrew Truett<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eleifend quis ipsum id varius. Morbi accumsan erat vel tortor sagittis ultrices. Pellentesque vulputate felis sit amet hendrerit aliquet. Morbi dictum venenatis eleifend. Suspendisse sollicitudin nulla feugiat, vestibulum neque in, volutpat nibh. Sed ut venenatis dui. Nulla id lacus ac erat aliquet imperdiet nec congue neque. Quisque consectetur vulputate quam, a luctus urna malesuada eget.</p>
+                    </li>
+                    
+                    <li class="list-group-item review-item">
+                        Review title 1<br><p class="sub-heading">Rating: 5/5<br>By: Andrew Truett<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eleifend quis ipsum id varius. Morbi accumsan erat vel tortor sagittis ultrices. Pellentesque vulputate felis sit amet hendrerit aliquet. Morbi dictum venenatis eleifend. Suspendisse sollicitudin nulla feugiat, vestibulum neque in, volutpat nibh. Sed ut venenatis dui. Nulla id lacus ac erat aliquet imperdiet nec congue neque. Quisque consectetur vulputate quam, a luctus urna malesuada eget.</p>
+                    </li>
+                </ul>
+                
+            </div>
+            
+            <div class="col-4">
+                <p class="panel-heading">Ready for Delivery</p>
+                
+                <div class="row">
+                    <div class="col-6">
+                        <p class="sub-heading">Delivery Guy:</p>
+                    </div>
+                    <div class="col-6">
+                        <select>
+                            <option>Delivery guy Jim</option>
+                            <option>Driven Dan</option>
+                            <option>Some random guy that has a car</option>
+                            <option>Mark</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="list-group">
+                    <li class="list-group-item">
+                        Order 1<br><p class="sub-heading">Placed at: 12:00<br>Items: 3</p>
+                    </li>
+                    
+                    <li class="list-group-item">
+                        Order 1<br><p class="sub-heading">Placed at: 12:00<br>Items: 3</p>
+                    </li>
+                    
+                    <li class="list-group-item">
+                        Order 1<br><p class="sub-heading">Placed at: 12:00<br>Items: 3</p>
+                    </li>
+                    
+                    <li class="list-group-item">
+                        Order 1<br><p class="sub-heading">Placed at: 12:00<br>Items: 3</p>
+                    </li>
+                    
+                    <li class="list-group-item">
+                        Order 1<br><p class="sub-heading">Placed at: 12:00<br>Items: 3</p>
+                    </li>
+                
+                </div>
+                
+                <div class="row">
+                    <div class="col text-center">
+                        <button type="button" class="btn-lg btn-success btn-style" id="deliver-btn">Send for Delivery</button><!--Sends order to delivery guy-->
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-3">
+                <p class="panel-heading">Payroll</p>
+                <div class="list-group">
+                    <li class="list-group-item">
+                        Order 1<br><p class="sub-heading">Placed at: 12:00<br>Items: 3</p>
+                    </li>
+                    
+                    <li class="list-group-item">
+                        Order 1<br><p class="sub-heading">Placed at: 12:00<br>Items: 3</p>
+                    </li>
+                    
+                    <li class="list-group-item">
+                        Order 1<br><p class="sub-heading">Placed at: 12:00<br>Items: 3</p>
+                    </li>
+                    
+                    <li class="list-group-item">
+                        Order 1<br><p class="sub-heading">Placed at: 12:00<br>Items: 3</p>
+                    </li>
+                    
+                    <li class="list-group-item">
+                        Order 1<br><p class="sub-heading">Placed at: 12:00<br>Items: 3</p>
+                    </li>
+                </div>
+            </div>
+            
+        </div>
+        
+        
         </div>
     </body>
 </html>

@@ -7,3 +7,12 @@
     background-color: skyblue;
     opacity: 1;/*Might change later*/
 }
+
+.sub-heading {
+    font-size: 24px;
+}
+
+.btn-style {
+    margin-top: 15px;
+    font-size: 26px;
+}
