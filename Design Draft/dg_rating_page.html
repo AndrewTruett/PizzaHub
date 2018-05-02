@@ -1,34 +1,37 @@
 <!DOCTYPE html>
 <html>
 
-  <head<!DOCTYPE html>
-<html>
-
   <head>
     <script data-require="jquery@*" data-semver="2.2.0" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <link data-require="fontawesome@*" data-semver="4.5.0" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.css" />
     <link rel="stylesheet" href="css/dg_rating_page.css" />
     <script src="js/dg_rating_page.js"></script>
-    <link rel="stylesheet" href="css/dg_review_page.css" />
-    <script src="js/dg_review_page.js"></script>
   </head>
 
   <body>
-    <h1>Rate the Customer: </h1>
-    <form>
-      <!-- hide the input -->
-      <input type="number" name="rating" id="rating-input" min="1" max="5" />
-    </form>
+    <div class="center">
     
-    <div class="rating" role="optgroup">
-      <!-- in Rails just use 1.upto(5) -->
+    <h1>Rate the Customer: </h1>
+    
+    <div class="rating" role="radiogroup">
+      <!-- in Rails just use 1.upto(5) -->  
       <i class="fa fa-star-o fa-2x rating-star" id="rating-1" data-rating="1" tabindex="0" aria-label="Rate as one out of 5 stars" role="radio"></i>
       <i class="fa fa-star-o fa-2x rating-star" id="rating-2" data-rating="2" tabindex="0" aria-label="Rate as two out of 5 stars" role="radio"></i>
       <i class="fa fa-star-o fa-2x rating-star" id="rating-3" data-rating="3" tabindex="0" aria-label="Rate as three out of 5 stars" role="radio"></i>
       <i class="fa fa-star-o fa-2x rating-star" id="rating-4" data-rating="4" tabindex="0" aria-label="Rate as four out of 5 stars" role="radio"></i>
       <i class="fa fa-star-o fa-2x rating-star" id="rating-5" data-rating="5" tabindex="0" aria-label="Rate as five out of 5 stars" role="radio"></i>
     </div>
+
+    <form>
+      <!-- hide the input -->  
+      <input type="number" name="rating" id="rating-input" min="1" max="5" />
+        <div class='button' id="fixedbutton">
+          <button> Submit </button>
+        </div> 
+    </form>
+  </div>
+  
+
   </body>
 
 </html>
-
