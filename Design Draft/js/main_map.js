@@ -1,21 +1,3 @@
-//var mapCenter = {lat:40.753380,lng:-73.986413}
-////marker.setMap(null);
-//                
-//function initMap(){
-//    // Map options
-//    var options = {
-//    zoom:15,
-//    center: mapCenter
-//    }
-//    // New map
-//    var map = new google.maps.Map(document.getElementById('map'), options);
-//
-//    var marker = new google.maps.Marker(
-//        {position: {lat: 40.757201, lng: -73.989968},
-//        map:map,
-//        title:'Don Hyder | Rating: 5.0/5.0'});                
-//}
-
 
 var mapCenter = {lat:40.756868,lng:-73.985345}
 
@@ -42,29 +24,6 @@ function initMap(){
 
       // New map
       var map = new google.maps.Map(document.getElementById('map'), options);
-
-      // Listen for click on map
-//      google.maps.event.addListener(map, 'click', function(event){
-//        // Add marker
-//        addMarker({coords:event.latLng});
-//      });
-
-      /*
-      // Add marker
-      var marker = new google.maps.Marker({
-        position:{lat:42.4668,lng:-70.9495},
-        map:map,
-        icon:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
-      });
-
-      var infoWindow = new google.maps.InfoWindow({
-        content:'<h1>Lynn MA</h1>'
-      });
-
-      marker.addListener('click', function(){
-        infoWindow.open(map, marker);
-      });
-      */
 
       // Array of markers
       var markers = [
@@ -95,9 +54,7 @@ function initMap(){
           coords:mariellaPizza ,
           content: '<span class="mm-store-name">Mariella Pizza</span> </br> <span class="map-marker-body">Rating : 4.60/5.00</span>'
         }
-          
-          
-          
+            
       ];
 
       // Loop through markers
