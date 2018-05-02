@@ -17,8 +17,7 @@
 //}
 
 
-
-var mapCenter = {lat:40.752860,lng:-73.986585}
+var mapCenter = {lat:40.756868,lng:-73.985345}
 
 //upper mid-manhattan
 var garlicNewYorkPizzaBar = {lat: 40.745237, lng: -73.975891};
