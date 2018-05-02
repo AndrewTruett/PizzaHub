@@ -91,3 +91,10 @@ body
     font-family: 'Overlock', cursive;
     font-size: 120%;
 }
+
+
+.map-marker-info
+{
+    font-family: 'Overlock', cursive;
+    font-size: 150%;
+}
