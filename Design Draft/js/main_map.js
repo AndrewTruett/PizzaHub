@@ -1,22 +1,21 @@
 //var mapCenter = {lat:40.753380,lng:-73.986413}
-//                marker.setMap(null);
+////marker.setMap(null);
 //                
-//                function initMap(){
-//                  // Map options
-//                  var options = {
-//                    zoom:15,
-//                    center: mapCenter
-//                  }
-//                  // New map
-//                  var map = new google.maps.Map(document.getElementById('map'), options);
-//                var marker = new google.maps.Marker(
-//                {position: {lat: 40.757201, lng: -73.989968},
-//                map:map,
-//                icon:'img/Pizza-icon.png',
-//                title:'Don Hyder | Rating: 5.0/5.0'});
-//                    
-//                }
+//function initMap(){
+//    // Map options
+//    var options = {
+//    zoom:15,
+//    center: mapCenter
+//    }
+//    // New map
+//    var map = new google.maps.Map(document.getElementById('map'), options);
 //
+//    var marker = new google.maps.Marker(
+//        {position: {lat: 40.757201, lng: -73.989968},
+//        map:map,
+//        title:'Don Hyder | Rating: 5.0/5.0'});                
+//}
+
 
 var mapCenter = {lat:40.753380,lng:-73.986413}
 var garlicNewYorkPizzaBar = {lat: 40.745237, lng: -73.975891};
@@ -34,10 +33,10 @@ function initMap(){
       var map = new google.maps.Map(document.getElementById('map'), options);
 
       // Listen for click on map
-      google.maps.event.addListener(map, 'click', function(event){
-        // Add marker
-        addMarker({coords:event.latLng});
-      });
+//      google.maps.event.addListener(map, 'click', function(event){
+//        // Add marker
+//        addMarker({coords:event.latLng});
+//      });
 
       /*
       // Add marker
@@ -60,7 +59,6 @@ function initMap(){
       var markers = [
         {
           coords:garlicNewYorkPizzaBar,
-//          iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
           content:'<span class="map-marker-info"> Garlic NY Pizza Bar | Rating : 4.78/5.00 </span>'
         },
         {
