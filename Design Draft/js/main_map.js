@@ -105,12 +105,31 @@ function initMap(){
     }
 
 function saveStoreName() {
-    localStorage.clear();
     $(document).on("click", "#login-btn", function(){
         var parentText = $(this).parent().text();
         var storeName = parentText.substr(0, parentText.indexOf("Rating"));
         $(".login-store-name").empty();
         $(".login-store-name").text(storeName);
         localStorage.setItem("currentStore", storeName);
+        
+        $("#username").val("");
+        $("#password").val("");
     });
+}
+
+function login() {
+    var userNameStr = $("#username").val();
+    var passwordStr = $("#password").val();
+    
+    if(userNameStr == "" || passwordStr == "") {
+        $("#username").val("");
+        $("#password").val("");
+        alert("Please enter your username and password");
+    }
+    else {
+        //check for successful login here
+        
+        //go to store page
+        window.location.href = "store_page.html";
+    }
 }

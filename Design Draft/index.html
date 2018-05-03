@@ -85,20 +85,20 @@
 
                             <br/>
                             <span class="col-4">Username </span>
-                            <input type="text" name="lastname" class="col-8">
+                            <input id="username" type="text" name="lastname" class="col-8">
                             <br/>
                             <span class="col-4">Password  </span>
-                            <input type="password" name="lastname" style="font-size: 100%" class="col-8">
+                            <input id="password" type="password" name="lastname" style="font-size: 100%" class="col-8">
 
                             <br/>
                             <br/>
-                            Not a member yet? <a href="">Create a new account</a>
+                            Not a member yet? <a href="create_account.html">Create a new account</a>
                             <br/> If you don't want to create an account, select login as a visitor and press login.
 
                       </div>
                       <div class="modal-footer login-body">
                         <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-outline-success" onclick="location.href = 'store_page.html';">Login</button>
+                        <button type="button" class="btn btn-outline-success" onclick="login();">Login</button>
                       </div>
                     </div>
                   </div>
