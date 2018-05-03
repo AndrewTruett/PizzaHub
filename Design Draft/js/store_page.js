@@ -1,4 +1,10 @@
 $(document).ready(function() {
+    var storeName = localStorage.getItem("currentStore");
+    $(".store-heading").text(storeName);
+    
+    
+    
+    
     $("#add-pop-item-btn").click(function(){
         var order = $("#pop-item-row a.active").text();
         if(order == "")

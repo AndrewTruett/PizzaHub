@@ -35,31 +35,37 @@ function initMap(){
       // Array of markers
       var markers = [
         {
+          name:"Garlic NY Pizza Bar",
           coords:garlicNewYorkPizzaBar,
-          content:'<span class="mm-store-name"> Garlic NY Pizza Bar </span> </br> <span class="map-marker-body"> Rating : 4.78/5.00 </span></br></br><button type="button" class="btn btn-link" data-toggle="modal" data-target="#loginModal">Click here to login</button>'
+          content:'<span class="mm-store-name">Garlic NY Pizza Bar</span> </br> <span class="map-marker-body"> Rating : 4.78/5.00 </span></br></br><button type="button" class="btn btn-link" data-toggle="modal" data-target="#loginModal" onclick="saveStoreName()" id="login-btn">Click here to login</button>'
         },
         {
+          name:"Famous Amadeus Pizza",
           coords:famousAmadeusPizza,
-          content:'<span class="mm-store-name">Famous Amadeus Pizza</span> </br> <span class="map-marker-body">Rating : 4.50/5.00</span></br></br><button type="button" class="btn btn-link" data-toggle="modal" data-target="#loginModal">Click here to login</button>'
+          content:'<span class="mm-store-name">Famous Amadeus Pizza</span> </br> <span class="map-marker-body">Rating : 4.50/5.00</span></br></br><button type="button" class="btn btn-link" data-toggle="modal" data-target="#loginModal" onclick="saveStoreName()" id="login-btn">Click here to login</button>'
         },
           
         {
+          name:"Don Hyder",
           coords: donHyder,
-          content: '<span class="mm-store-name">Don Hyder</span> </br> <span class="map-marker-body">Rating : 5.00/5.00</span></br></br><button type="button" class="btn btn-link" data-toggle="modal" data-target="#loginModal">Click here to login</button>'
+          content: '<span class="mm-store-name">Don Hyder</span> </br> <span class="map-marker-body">Rating : 5.00/5.00</span></br></br><button type="button" class="btn btn-link" data-toggle="modal" data-target="#loginModal" onclick="saveStoreName()" id="login-btn">Click here to login</button>'
         },
         {
+          name:"Little Italy Pizza",
           coords:littleItalyPizza,
-          content: '<span class="mm-store-name">Little Italy Pizza</span> </br> <span class="map-marker-body">Rating : 3.50/5.00</span></br></br><button type="button" class="btn btn-link" data-toggle="modal" data-target="#loginModal">Click here to login</button>'
+          content: '<span class="mm-store-name">Little Italy Pizza</span> </br> <span class="map-marker-body">Rating : 3.50/5.00</span></br></br><button type="button" class="btn btn-link" data-toggle="modal" data-target="#loginModal" onclick="saveStoreName()" id="login-btn">Click here to login</button>'
         },
           
         {
+          name: "Angelos Pizza",
           coords:angelosPizza,
-          content: '<span class="mm-store-name">Angelos Pizza</span> </br> <span class="map-marker-body">Rating : 4.00/5.00</span></br></br><button type="button" class="btn btn-link" data-toggle="modal" data-target="#loginModal">Click here to login</button>'
+          content: '<span class="mm-store-name">Angelos Pizza</span> </br> <span class="map-marker-body">Rating : 4.00/5.00</span></br></br><button type="button" class="btn btn-link" data-toggle="modal" data-target="#loginModal" onclick="saveStoreName()" id="login-btn">Click here to login</button>'
         }
         ,
         {
+          name: "Mariella Pizza",
           coords:mariellaPizza ,
-          content: '<span class="mm-store-name">Mariella Pizza</span> </br> <span class="map-marker-body">Rating : 4.60/5.00</span></br></br><button type="button" class="btn btn-link" data-toggle="modal" data-target="#loginModal">Click here to login</button>'
+          content: '<span class="mm-store-name">Mariella Pizza</span> </br> <span class="map-marker-body">Rating : 4.60/5.00</span></br></br><button type="button" class="btn btn-link" data-toggle="modal" data-target="#loginModal" onclick="saveStoreName()" id="login-btn">Click here to login</button>'
         }
             
       ];
@@ -73,6 +79,7 @@ function initMap(){
       // Add Marker Function
       function addMarker(props){
         var marker = new google.maps.Marker({
+          name:name,
           position:props.coords,
           map:map,
           //icon:props.iconImage
@@ -96,3 +103,14 @@ function initMap(){
         }
       }
     }
+
+function saveStoreName() {
+    localStorage.clear();
+    $(document).on("click", "#login-btn", function(){
+        var parentText = $(this).parent().text();
+        var storeName = parentText.substr(0, parentText.indexOf("Rating"));
+        $(".login-store-name").empty();
+        $(".login-store-name").text(storeName);
+        localStorage.setItem("currentStore", storeName);
+    });
+}
