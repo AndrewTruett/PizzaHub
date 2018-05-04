@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
+		<!--Title of the Page-->
+        <title>Pizza Hub | Store name</title>
+        
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<!--Bootstrap-->
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        
+		<!--CSS-->
+		<!--<link href="css/searchButtonStore.css" rel="stylesheet"> -->
+        <link href="css/phStyle.css" rel="stylesheet"> 
+        <link href="css/searchBar.css" rel="stylesheet">
+        <link href="css/search.css" rel="stylesheet">
+		<link href="css/store_page.css" rel="stylesheet">
+        
+        <!-- Load icon library -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
+        <script src="js/store_page.js"></script>
+        
+    </head>
+    
+    <body>
+	  <div class="container-fluid">
+		<!--Navbar row-->
+		<div class="row">
+		  <div class="col-7 black-color">
+            <div class="brand" id="logo">
+              <a href="index.html">
+                <img src="img/phpaste.png" class="img-adjust">
+              </a>
+            </div>
+		  </div>
+			
+		  <div class="col green-color">
+			<div class="" id="search-bar">
+            <input type="text" id="searchterm" placeholder="Looking for a store?..." />
+			<!--update this later: onclick should be updated-->
+            <button type="button" id="search" onclick="window.location.href='search_results.html'">Search</button>
+            </div>
+		  </div>		
+		</div>
+        <!--End navbar-->
+          
+        <div class="row store-name-row">
+            <div class="col-6">
+                <p class="store-heading"></p>
+            </div>
+            
+            <div class="col-2 text-center">
+                <p class="rating">Food rating</p>
+            </div>
+            
+            <div class="col-2 text-center">
+                <p class="rating">Cook rating</p>
+            </div>
+            
+            <div class="col-2 text-center">
+                <p class="rating">Delivery Rating</p>
+            </div> 
+        </div>  
+          
+        <!--Select food-->
+        <div class="row">
+            <!--Popular items and beverages-->
+            <div class="col-4">
+                <!--Popular items-->
+                <div class="row" id="pop-item-row">
+                    <div class="col text-center">
+                        <p class="panel-heading">Our Top Items</p>
+                        <div class="list-group">
+                            <a href="#" class="list-group-item list-group-item-action sub-item pop-item-entry" onclick="return false">
+                                <span class="badge badge-warning">$12</span>
+                                Cheese Pizza
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action sub-item pop-item-entry" onclick="return false">
+                                <span class="badge badge-warning">$12</span>
+                                Pepperoni Pizza
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action sub-item pop-item-entry" onclick="return false">
+                                <span class="badge badge-warning">$12</span>
+                                BBQ Chicken Pizza
+                            </a>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <button type="button" class="btn btn-dark add-btn" id="add-pop-item-btn">>></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <hr>
+                
+                <!--Beverages-->
+                <div class="row" id="beverage-row">
+                    <div class="col text-center">
+                        <p class="panel-heading">Beverages</p>
+                        <div class="list-group">
+                            <a href="#" class="list-group-item list-group-item-action sub-item" onclick="return false">
+                                <span class="badge badge-warning">$12</span>
+                                Coke
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action sub-item" onclick="return false">
+                                <span class="badge badge-warning">$12</span>
+                                Pepsi
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action sub-item" onclick="return false">
+                                <span class="badge badge-warning">$12</span>
+                                Root Beer
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action sub-item" onclick="return false">
+                                <span class="badge badge-warning">$12</span>
+                                Lemonade
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action sub-item" onclick="return false">
+                                <span class="badge badge-warning">$12</span>
+                                Water
+                            </a>
+                        </div>
+                        
+                        <button type="button" class="btn btn-dark add-btn" id="add-bvg-btn">>></button>
+                    </div> 
+                </div>
+            </div>
+            
+            <!--Create pizza and Menu-->
+            <div class="col-4 text-center">
+                <div class="row">
+                    <div class="col text-center">
+                        <p class="panel-heading">Create Your Own Pizza</p>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-6">
+                        <p class="sub-item">Dough:</p>
+                    </div>
+                    
+                    <div class="col-6">
+                        <select class="price-sensitive-select" id="topping-select">
+                                <option value="7">Stuffed Crust $7</option>
+                                <option value="6">New York Style $6</option>
+                                <option value="5">Regular $5</option>
+                            </select>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-6">
+                        <p class="sub-item">Topping:</p>
+                    </div>
+                    
+                    <div class="col-6">
+                        <select class="price-sensitive-select" id="dough-select">
+                            <option value="1">Plain $1</option>
+                            <option value="2">Pepperoni $2</option>
+                            <option value="3">Onions $3</option>
+                            <option value="more">More options</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-6">
+                        <p class="sub-item">Cook:</p>
+                    </div>
+                    
+                    <div class="col-6">
+                        <select>
+                            <option value="andrew">Andrew 5/5</option>
+                            <option value="tahsin">Tahsin 0/5</option>
+                            <option value="farhan">Farhan 0/5</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="row"> 
+                    <!-- Price of custom selection-->
+                    <div class="col-6">
+                        <p class="sub-item">Price:</p>
+                    </div>
+                    <div class="col-6">
+                        <p class="sub-item" id="custom-price">$8</p>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col">
+                        <p class="panel-heading">Special Instructions</p>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col">
+                        <textarea rows="7" cols="50"></textarea>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col">
+                        <button type="button" class="btn btn-dark add-btn" id="add-spec-item-btn">>></button>
+                    </div>
+                </div>
+                
+                <hr>
+                
+                <!--Menu row-->
+                <div class ="row" id="menu-row">
+                    <div class="col">
+                        <p class="panel-heading">Menu</p>
+                        <div class="list-group">
+                            <a href="#" class="list-group-item list-group-item-action sub-item" onclick="return false">
+                                <span class="badge badge-warning">$12</span>
+                                Cheese Pizza
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action sub-item" onclick="return false">
+                                <span class="badge badge-warning">$12</span>
+                                Pepperoni Pizza
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action sub-item" onclick="return false">
+                                <span class="badge badge-warning">$12</span>
+                                BBQ Chicken Pizza
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action sub-item" onclick="return false">
+                                <span class="badge badge-warning">$12</span>
+                                Sausage Pizza
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action sub-item" onclick="return false">
+                                <span class="badge badge-warning">$12</span>
+                                Meatball Pizza
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action sub-item" onclick="return false">
+                                More items here
+                            </a>
+                        </div>
+                        <button type="button" class="btn btn-dark add-btn" id="add-menu-item-btn">>></button>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <!--Shopping cart col-->
+            <div class="col-4">
+                <!--Address row-->
+                <div class="row">
+                    <div class="col-6">
+                        <p class="sub-item">Your Address:</p>
+                    </div>
+                    <div class="col-6">
+                        <p class="sub-item">123 Road St, Manhattan New York 10027</p>
+                    </div>
+                </div>
+                
+                <hr>
+                
+                <!-- Cart row-->
+                <div class="row">
+                    <div class="col">
+                        <p class="panel-heading text-center">Shopping Cart</p>
+                        <p class="item-label">Items:</p>
+                    </div>
+                </div>
+                <div class="row checkout-items">
+                    <div class="col text-center">
+                        <ul class="list-group list-group-flush"><!--Items to be purchased-->
+                        </ul>
+                    </div>
+                </div>
+                
+                <hr>
+                
+                <div class="row check-out"> 
+                    <!--Checkout row-->
+                    <div class="col-6">
+                        <p class="sub-item">Total:</p>
+                    </div>
+                    <div class="col-6">
+                        <p class="sub-item" id="total-label">$0</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col text-center">
+                        <button type="button" class="btn btn-success checkout-btn" onclick="saveOrder()">Checkout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+	  </div>
+	</body>
+</html>

@@ -1,0 +1,42 @@
+body{ 
+    background-size: cover;
+    background-position: center;
+
+}
+
+
+.login-page{
+    width: 500px;
+    padding: 10% 0 0;
+    margin:auto;
+    font-weight:inherit;
+}
+
+.form{
+    position: relative;
+    z-index: 1;
+    background: none;
+    max-width: 450x;
+    margin-bottom:20px
+    padding: 45px;
+    text-align: center;
+    margin: 0 auto 100px;
+    
+}
+    
+    
+.form input{
+    border:none;
+    border: 1px solid #000000;
+    font-family: "Roboto", sans-serif;
+    outline:none
+    background: none;
+    color:#000000;
+    margin:0 0 20px
+    width:100%
+    font-size:14px
+}
+
+.form button:hover,.form.button:active{
+    background: #43A047;
+}

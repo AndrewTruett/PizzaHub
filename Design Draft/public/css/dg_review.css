@@ -1,0 +1,33 @@
+.rating {
+	cursor: pointer;
+}
+
+.rating .rating-star {
+	display: inline-block;
+  position: relative;
+  padding-right: 5px;
+  margin-left: -5px;
+  color: #e3cf7a;
+}
+.rating .selected:before {
+  content: '\f005';
+}
+.buttons {
+  position:relative; 
+   	margin-left:-5px;   
+   	width:150px;
+   	bottom:700px;
+} 
+
+.center {
+    margin: auto;
+    width: 60%;
+    
+}
+
+.rating-input {
+	position:relative; 
+   	margin-left:-5px;   
+   	width:150px;
+   	bottom:700px;
+}

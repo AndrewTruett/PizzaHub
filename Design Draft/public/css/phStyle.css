@@ -1,0 +1,107 @@
+/*cute font: for map text*/
+@import url('https://fonts.googleapis.com/css?family=Cute+Font');
+
+/*overlock font: for login body*/
+@import url('https://fonts.googleapis.com/css?family=Overlock');
+
+
+/*everything in body*/
+body 
+{
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto Slab', serif;
+}
+
+
+/*topbar*/
+.topbar
+{
+    font-size: 150%;
+    color: white;
+    background-color: black;
+            
+    position: fixed;
+    top: 0;
+            
+    width: 100%;
+    height: 81px;
+}
+    
+/*topbar elements*/
+.topbar-section
+{
+    float: left;  
+}
+
+#logo1
+{
+/*    margin: 4px 4px 4px 4px;*/
+    position: relative;
+    left: -18px;
+    top: -25px;
+}
+
+.map-wrap
+{
+    position: fixed;
+    top: 8.3%;
+    width: 100%;
+}
+
+.map-text
+{
+/*
+    position: fixed;
+    top: 8.3%;
+*/
+    background-color: skyblue;
+    height: 11%;
+    
+    font-size: 220%;
+    color: white;
+    text-align: center;
+    font-family: 'Cute Font', cursive;
+	
+
+}
+
+#map{
+	position: fixed;
+    width: 100%;
+    height:790px;
+    
+    }
+
+
+.login-store-name
+{
+    width: 100%;
+    background-color: skyblue;
+    font-size: 220%;
+    color: black;
+    text-align: center;
+    font-family: 'Cute Font', cursive;
+    border-radius: 2%;
+}
+
+.login-body
+{
+    font-family: 'Overlock', cursive;
+    font-size: 120%;
+}
+
+
+.map-marker-body
+{
+    font-family: 'Overlock', cursive;
+    font-size: 150%;
+}
+
+.mm-store-name
+{
+    font-family: 'Cute Font', cursive;
+    font-size: 220%;
+    font-weight: bold;
+}
