@@ -2,7 +2,7 @@ $(document).ready(function(){
     //add employeee
         $("#add-btn").click(function(){
             var empiD = $("#empID").val();
-            var fullname = $("#fullname").val();
+            var fullname = $("#fullName").val();
             var position = $("#position").val();
             var hoursworked = $("#hoursworked").val();
             var payrate = $("#payrate").val();
