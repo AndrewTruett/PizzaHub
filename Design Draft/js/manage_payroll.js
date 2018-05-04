@@ -1,4 +1,5 @@
 $(document).ready(function(){
+    //add employeee
         $(".add-row").click(function(){
             var empiD = $("#empID").val();
             var fullname = $("#fullname").val();
