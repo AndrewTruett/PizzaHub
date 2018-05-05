@@ -30,31 +30,31 @@
         
         
     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#loginModal">
-      Click here to login
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#mapDirectionModal">
+      Click here to use map direction
     </button>
 
     <!-- Login Modal -->
-    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
+    <div class="modal fade" id="mapDirectionModal" tabindex="-1" role="dialog" aria-labelledby="mapDirectionModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title login-store-name" id="loginModalLabel">Delivery Route Assistant</h5>
+            <h5 class="modal-title" id="mapDirectionModalLabel">Delivery Route Assistant</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div class="modal-body login-body">               
+          <div class="modal-body">               
 
                 <form id="calculate-route" name="calculate-route" action="#" method="get">
                   <label for="from">From:</label>
-                  <input type="text" id="from" name="from" required="required" placeholder="An address" size="30" />
-                  <a id="from-link" href="#">Set my position</a>
+                  <input type="text" id="from" name="from" required="required" placeholder="Your Location" size="30" />
+                  <a id="from-link" href="#">Set my location</a>
                   <br />
 
                   <label for="to">To:</label>
-                  <input type="text" id="to" name="to" required="required" placeholder="Another address" size="30" />
-                  <a id="to-link" href="#">Set my position</a>
+                  <input type="text" id="to" name="to" required="required" placeholder="Destination address" size="30" />
+                  <a id="to-link" href="#">Set my location</a>
                   <br />
 
                   <input type="submit" />
@@ -64,7 +64,7 @@
                 <p id="error"></p>
         
           </div>
-          <div class="modal-footer login-body">
+          <div class="modal-footer">
             <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Close</button>
             
 <!--            <button type="button" class="btn btn-outline-success">Login</button>-->
