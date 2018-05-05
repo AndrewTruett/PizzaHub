@@ -39,7 +39,7 @@
       <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="mapDirectionModalLabel">Delivery Route Assistant</h5>
+            <h5 class="modal-title map-direction-title" id="mapDirectionModalLabel">Delivery Route Assistant</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -47,15 +47,18 @@
           <div class="modal-body">               
 
                 <form id="calculate-route" name="calculate-route" action="#" method="get">
-                  <label for="from">From:</label>
-                  <input type="text" id="from" name="from" required="required" placeholder="Your Location" size="30" />
+<!--                  <label for="from">From:</label>-->
+                  <input type="text" id="from" name="from" required="required" placeholder="Your address" size="30" />
                   <a id="from-link" href="#">Set my current location</a>
-                  <br />
+        
+                    <div style="line-height:50%;">
+                        <br>
+                    </div>
 
-                  <label for="to">To:</label>
+<!--                  <label for="to">To:</label>-->
                   <input type="text" id="to" name="to" required="required" placeholder="Destination address" size="30" />
                   <a id="to-link" href="#">Set my current location</a>
-                  <br />
+                  <br /> <br />
                     
                     <div class="btn-group">
                         <button type="submit" class="btn  btn-success">Get Route</button>
