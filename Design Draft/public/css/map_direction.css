@@ -1,5 +1,21 @@
- #map {
+/*font for map direction title*/
+@import url('https://fonts.googleapis.com/css?family=Skranji');
+
+
+#map {
         width: 100%;
         height: 400px;
         margin-top: 10px;
       }
+
+.map-direction-title
+{
+    width: 100%;
+    background-color: #89B69B;
+    font-size: 160%;
+    color: black;
+    text-align: center;
+    font-family: 'Skranji', cursive;
+    border-radius: 1%;
+}
+
