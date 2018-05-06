@@ -20,6 +20,14 @@ app.get('/home', function(req, res) {//when user goes to domain.com/home this fu
 
         console.log("The file was saved!");
     });*/
+    
+    /*******This is how to read a text file. Whatever was in the text file comes back as the data argument. err is the error, if there ws no error, err is null.
+    fs.readFile(__dirname+'/public/system/test.txt', 'utf8', function (err,data) {
+        if (err) {
+            return console.log(err);
+        }
+        console.log(data);
+    });*/
 });
 
 app.get('/store/:name', function(req, res) {
