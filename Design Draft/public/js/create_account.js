@@ -3,5 +3,27 @@ $(document).ready(function() {
     $("#create-account-btn").click(function() {
         var currentStore = localStorage.getItem("currentStore").toLowerCase().trim().split(" ").join("_");//converts store name to lower case with underscores instead of spaces
         
+        try {
+            var name = $("#first-name").val()+' '+$("#last-name").val();
+            alert(name);
+            xmlHttp.open("GET", currentStore+"/newuser/"+name, true);
+            xmlHttp.onreadystatechange = handleServerResponse;
+            xmlHttp.send(null);
+        } catch(e) {
+            console.log(e.toString());
+        }
     });
 });
+
+var xmlHttp = new XMLHttpRequest();
+
+function handleServerResponse() {
+    //Note some browsers ignore states.
+    if(xmlHttp.readyState == 4) {
+        if(xmlHttp.status == 200) { //Everything went okay
+            console.log(xmlHttp.responseText);
+        } else if (xmlHttp.status == 404) {
+            console.log("404 not found");
+        }
+    }
+}

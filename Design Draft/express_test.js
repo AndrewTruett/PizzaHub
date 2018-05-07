@@ -30,8 +30,19 @@ app.get('/home', function(req, res) {//when user goes to domain.com/home this fu
     });*/
 });
 
-app.get('/store/:name', function(req, res) {
-    res.send('You requested to see store with the id ' + req.params.id);
+app.get('/:storename/newuser/:name', function(req, res) {
+    var newuser = req.params.name;
+    var storename = req.params.storename;
+    res.send('You requested to make a new record for ' + newuser+', at the store '+ storename);
+    fs.appendFile(__dirname+'/public/system/test.txt', newuser, function (err) {
+        if (err) throw err;
+        console.log('Saved!');
+        });
 });
+
+app.get('/test', function(req, res) {
+   res.send("This is a test"); 
+});
+
 
 app.listen(8080);
