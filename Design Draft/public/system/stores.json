@@ -1,0 +1,14 @@
+{
+  "stores":[
+    {
+      "storeID":101,
+      "name":"Angelos Pizza",
+      "address":
+      {
+        "lat":,
+        "lng":
+      }
+
+    }
+  ]
+}
