@@ -1,8 +1,8 @@
 function calculateRoute(from, to) {
-        // Center initialized to Naples, Italy
+        // Center initialized to mid manhattan
         var myOptions = {
           zoom: 10,
-          center: new google.maps.LatLng(40.84, 14.25),
+          center: new google.maps.LatLng(40.756868, -73.985345),
           mapTypeId: google.maps.MapTypeId.ROADMAP
         };
         // Draw the map
