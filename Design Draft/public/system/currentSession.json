@@ -3,6 +3,10 @@
         "type":"",
         "name":"",
         "id":0,
-        "store":""
+        "store":"",
+        "address":{
+            "lat":0,
+            "lng":0
+        }
     }
 }
