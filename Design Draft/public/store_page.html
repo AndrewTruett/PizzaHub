@@ -1,34 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        
+
 		<!--Title of the Page-->
         <title>Pizza Hub | Store name</title>
-        
+
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
-		
+
 		<!--Bootstrap-->
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        
+
 		<!--CSS-->
 		<!--<link href="css/searchButtonStore.css" rel="stylesheet"> -->
-        <link href="css/phStyle.css" rel="stylesheet"> 
+        <link href="css/phStyle.css" rel="stylesheet">
         <link href="css/searchBar.css" rel="stylesheet">
         <link href="css/search.css" rel="stylesheet">
 		<link href="css/store_page.css" rel="stylesheet">
-        
+
         <!-- Load icon library -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        
-        
+
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
         <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
         <script src="js/store_page.js"></script>
-        
+
     </head>
-    
+
     <body>
 	  <div class="container-fluid">
 		<!--Navbar row-->
@@ -40,35 +40,35 @@
               </a>
             </div>
 		  </div>
-			
+
 		  <div class="col green-color">
 			<div class="" id="search-bar">
             <input type="text" id="searchterm" placeholder="Looking for a store?..." />
 			<!--update this later: onclick should be updated-->
             <button type="button" id="search" onclick="window.location.href='search_results.html'">Search</button>
             </div>
-		  </div>		
+		  </div>
 		</div>
         <!--End navbar-->
-          
+
         <div class="row store-name-row">
             <div class="col-6">
                 <p class="store-heading"></p>
             </div>
-            
+
             <div class="col-2 text-center">
                 <p class="rating">Food rating</p>
             </div>
-            
+
             <div class="col-2 text-center">
                 <p class="rating">Cook rating</p>
             </div>
-            
+
             <div class="col-2 text-center">
                 <p class="rating">Delivery Rating</p>
-            </div> 
-        </div>  
-          
+            </div>
+        </div>
+
         <!--Select food-->
         <div class="row">
             <!--Popular items and beverages-->
@@ -98,9 +98,9 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <hr>
-                
+
                 <!--Beverages-->
                 <div class="row" id="beverage-row">
                     <div class="col text-center">
@@ -127,12 +127,12 @@
                                 Water
                             </a>
                         </div>
-                        
+
                         <button type="button" class="btn btn-dark add-btn" id="add-bvg-btn">>></button>
-                    </div> 
+                    </div>
                 </div>
             </div>
-            
+
             <!--Create pizza and Menu-->
             <div class="col-4 text-center">
                 <div class="row">
@@ -140,12 +140,12 @@
                         <p class="panel-heading">Create Your Own Pizza</p>
                     </div>
                 </div>
-                
+
                 <div class="row">
                     <div class="col-6">
                         <p class="sub-item">Dough:</p>
                     </div>
-                    
+
                     <div class="col-6">
                         <select class="price-sensitive-select" id="topping-select">
                                 <option value="7">Stuffed Crust $7</option>
@@ -154,12 +154,12 @@
                             </select>
                     </div>
                 </div>
-                
+
                 <div class="row">
                     <div class="col-6">
                         <p class="sub-item">Topping:</p>
                     </div>
-                    
+
                     <div class="col-6">
                         <select class="price-sensitive-select" id="dough-select">
                             <option value="1">Plain $1</option>
@@ -169,12 +169,12 @@
                         </select>
                     </div>
                 </div>
-                
+
                 <div class="row">
                     <div class="col-6">
                         <p class="sub-item">Cook:</p>
                     </div>
-                    
+
                     <div class="col-6">
                         <select>
                             <option value="andrew">Andrew 5/5</option>
@@ -183,8 +183,8 @@
                         </select>
                     </div>
                 </div>
-                
-                <div class="row"> 
+
+                <div class="row">
                     <!-- Price of custom selection-->
                     <div class="col-6">
                         <p class="sub-item">Price:</p>
@@ -193,27 +193,27 @@
                         <p class="sub-item" id="custom-price">$8</p>
                     </div>
                 </div>
-                
+
                 <div class="row">
                     <div class="col">
                         <p class="panel-heading">Special Instructions</p>
                     </div>
                 </div>
-                
+
                 <div class="row">
                     <div class="col">
                         <textarea rows="7" cols="50"></textarea>
                     </div>
                 </div>
-                
+
                 <div class="row">
                     <div class="col">
                         <button type="button" class="btn btn-dark add-btn" id="add-spec-item-btn">>></button>
                     </div>
                 </div>
-                
+
                 <hr>
-                
+
                 <!--Menu row-->
                 <div class ="row" id="menu-row">
                     <div class="col">
@@ -247,8 +247,8 @@
                     </div>
                 </div>
             </div>
-            
-            
+
+
             <!--Shopping cart col-->
             <div class="col-4">
                 <!--Address row-->
@@ -260,9 +260,9 @@
                         <p class="sub-item">123 Road St, Manhattan New York 10027</p>
                     </div>
                 </div>
-                
+
                 <hr>
-                
+
                 <!-- Cart row-->
                 <div class="row">
                     <div class="col">
@@ -276,10 +276,10 @@
                         </ul>
                     </div>
                 </div>
-                
+
                 <hr>
-                
-                <div class="row check-out"> 
+
+                <div class="row check-out">
                     <!--Checkout row-->
                     <div class="col-6">
                         <p class="sub-item">Total:</p>
@@ -290,7 +290,7 @@
                 </div>
                 <div class="row">
                     <div class="col text-center">
-                        <button type="button" class="btn btn-success checkout-btn" onclick="saveOrder()">Checkout</button>
+                        <input type="button" class="btn btn-success checkout-btn"id="chk-btn" onclick="saveOrder()"value="Checkout">
                     </div>
                 </div>
             </div>

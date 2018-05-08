@@ -1,0 +1,27 @@
+    {
+        "cooks":[
+            {
+            "emplID":1,
+            "username":"cook",
+            "password":"test",
+            "storeID":1,
+            "rating":4.3,
+            "numOfOrders":50,
+            "dropCounter":1,
+            "numWarnings":1,
+            "laidOff":false
+            },
+            {
+            "emplID":2,
+            "username":"tahsin",
+            "password":"ishegay",
+            "storeID":2,
+            "rating":4.3,
+            "numOfOrders":50,
+            "dropCounter":1,
+            "numWarnings":1,
+            "laidOff":false
+            }
+            
+        ]
+    }
