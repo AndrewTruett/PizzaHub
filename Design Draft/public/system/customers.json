@@ -5,7 +5,11 @@
       "username": "mickey",
       "password": "mouse",
       "blacklisted":false,
-
+      "address":{
+          "lat":40.765319,
+          "lng":-73.993710
+      },
+        
       "membership":[
         {
           "storeID": 1,
@@ -19,12 +23,16 @@
         }
       ]
     },
+      
     {
       "memID": 1224,
       "username": "donald",
       "password": "duck",
       "blacklisted":false,
-
+      "address":{
+          "lat":40.765550,
+          "lng": -73.992792
+      },
       "membership":[
         {
           "storeID": 2,
