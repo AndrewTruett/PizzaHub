@@ -1,19 +1,21 @@
 {
   "members":[
     {
-      "memID": 1223,
+      "memID": 1,
       "username": "mickey",
       "password": "mouse",
       "blacklisted":false,
 
       "membership":[
         {
-          "store": "angelos",
-          "type":"member"
+          "storeID": 1,
+          "type":"member",
+          "rating":3.4
         },
         {
           "store":"littleItaly",
-          "type":"vip"
+          "type":"vip",
+          "rating":4.7
         }
       ]
     },
@@ -25,36 +27,12 @@
 
       "membership":[
         {
-          "store": "angelos",
-          "type":"member"
-        }
-      ]
-    },
-    {
-      "memID": 1225,
-      "username": "daisy",
-      "password": "duck",
-      "blacklisted":true,
-
-      "membership":[
-        {
-          "store": "angelos",
-          "type":"member"
-        }
-      ]
-    },
-    {
-      "memID": 1226,
-      "username": "scooby",
-      "password": "shaggy",
-      "blacklisted":true,
-
-      "membership":[
-        {
-          "store": "angelos",
-          "type":"member"
+          "storeID": 2,
+          "type":"member",
+          "rating": 3.5
         }
       ]
     }
+
   ]
 }
