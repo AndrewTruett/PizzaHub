@@ -1,3 +1,8 @@
+
+
+
+
+
 var mapCenter = {lat:40.756868,lng:-73.985345}
 
 //note: variables that are commented out to be used in future "final" update
@@ -120,16 +125,66 @@ function saveStoreName() {
 function login() {
     var userNameStr = $("#username").val();
     var passwordStr = $("#password").val();
+    var selection = $("#test").val();
     
+ /*   
     if(userNameStr == "" || passwordStr == "") {
         $("#username").val("");
         $("#password").val("");
         alert("Please enter your username and password");
     }
+    else if((userNameStr == "" || passwordStr == "") && selection =="Visitor")  //if visitor skip to store page
+    {window.location.href="store_page.html";}
     else {
         //check for successful login here
+      //  var selection = $("#test").val();
         
-        //go to store page
-        window.location.href = "store_page.html";
+        if(selection == "customer")
+            window.location.href = "store_page.html";
+        else if(selection == "manager")
+            window.location.href = "manager_page.html";
+        else if(selection == "cook")
+            window.location.href="cook_page.html";
+        else if(selection == "deliveryGuy")
+            window.location.href="delivery_page.html";
+        else if(selection == "Visitor")
+            window.location.href="store_page.html";
     }
+    */
+        if(selection == "customer"){
+            if(userNameStr == "" || passwordStr == "") {
+            $("#username").val("");
+            $("#password").val("");
+            alert("Please enter your username and password");
+            }
+            else
+            window.location.href = "store_page.html";}
+        else if(selection == "manager"){
+            if(userNameStr == "" || passwordStr == "") {
+            $("#username").val("");
+            $("#password").val("");
+            alert("Please enter your username and password");
+            }
+            else
+            window.location.href = "manager_page.html";}
+        else if(selection == "cook"){
+            if(userNameStr == "" || passwordStr == "") {
+            $("#username").val("");
+            $("#password").val("");
+            alert("Please enter your username and password");
+            }
+            else
+            window.location.href="cook_page.html";}
+        else if(selection == "deliveryGuy"){
+            if(userNameStr == "" || passwordStr == "") {
+            $("#username").val("");
+            $("#password").val("");
+            alert("Please enter your username and password");
+            }
+            else
+            window.location.href="delivery_page.html";}
+        else if(selection == "visitor")
+            window.location.href="store_page.html";
+    
+    
 }
