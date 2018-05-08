@@ -129,13 +129,9 @@ function login() {
     else {
         //check for successful login here
 
-        //check for successful login here
 
         //go to store page
         window.location.href = "store_page.html";
     }
 
   }
-
-
-}
