@@ -1,8 +1,3 @@
-
-
-
-
-
 var mapCenter = {lat:40.756868,lng:-73.985345}
 
 //note: variables that are commented out to be used in future "final" update
@@ -198,12 +193,5 @@ function login() {
             window.location.href="delivery_page.html";}
         else if(selection == "visitor")
             window.location.href="store_page.html";
-    
-    
+       
 }
-
-}
-
-
-  }
-
