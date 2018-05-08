@@ -44,7 +44,7 @@ function initMap(){
           coords:famousAmadeusPizza,
           content:'<span class="mm-store-name">Famous Amadeus Pizza</span> </br> <span class="map-marker-body">Rating : 4.50/5.00</span></br></br><button type="button" class="btn btn-link" data-toggle="modal" data-target="#loginModal" onclick="saveStoreName()" id="login-btn">Click here to login</button>'
         },
-          
+
         {
           name:"Don Hyder",
           coords: donHyder,
@@ -55,7 +55,7 @@ function initMap(){
           coords:littleItalyPizza,
           content: '<span class="mm-store-name">Little Italy Pizza</span> </br> <span class="map-marker-body">Rating : 3.50/5.00</span></br></br><button type="button" class="btn btn-link" data-toggle="modal" data-target="#loginModal" onclick="saveStoreName()" id="login-btn">Click here to login</button>'
         },
-          
+
         {
           name: "Angelos Pizza",
           coords:angelosPizza,
@@ -67,7 +67,7 @@ function initMap(){
           coords:mariellaPizza ,
           content: '<span class="mm-store-name">Mariella Pizza</span> </br> <span class="map-marker-body">Rating : 4.60/5.00</span></br></br><button type="button" class="btn btn-link" data-toggle="modal" data-target="#loginModal" onclick="saveStoreName()" id="login-btn">Click here to login</button>'
         }
-            
+
       ];
 
       // Loop through markers
@@ -111,7 +111,7 @@ function saveStoreName() {
         $(".login-store-name").empty();
         $(".login-store-name").text(storeName);
         localStorage.setItem("currentStore", storeName);
-        
+
         $("#username").val("");
         $("#password").val("");
     });
@@ -120,7 +120,7 @@ function saveStoreName() {
 function login() {
     var userNameStr = $("#username").val();
     var passwordStr = $("#password").val();
-    
+
     if(userNameStr == "" || passwordStr == "") {
         $("#username").val("");
         $("#password").val("");
@@ -128,8 +128,14 @@ function login() {
     }
     else {
         //check for successful login here
-        
+
+        //check for successful login here
+
         //go to store page
         window.location.href = "store_page.html";
     }
+
+  }
+
+
 }
