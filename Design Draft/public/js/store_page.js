@@ -70,9 +70,9 @@ $(document).ready(function() {
         var newPrice = p1 + p2;
         $("#custom-price").text("$"+newPrice);
     });
-    //button to checkout page.
+    //clickbutton to go to checkout
     $('#chk-btn').click(function() {
-  window.location.href="create_account.html";
+  window.location.href="checkout.html";
 });
 
     //Handling of active list items
