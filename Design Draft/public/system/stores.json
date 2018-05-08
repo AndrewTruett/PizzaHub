@@ -1,14 +1,16 @@
 {
   "stores":[
     {
-      "storeID":101,
-      "name":"Angelos Pizza",
+      "storeID":1,
+      "name":"Garlic New York Pizza Bar",
       "address":
       {
-        "lat":,
-        "lng":
-      }
-
+        "lat":40.745237,
+        "lng":-73.975891
+      },
+        "rating": 4.4,
+        "foodRating":4.5,
+        "deliveryRating":4.3
     }
   ]
 }
