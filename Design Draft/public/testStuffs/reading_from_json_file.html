@@ -7,7 +7,7 @@
 
   <body>
       
-      <ul id="members"></ul>
+      <ul id="cust"></ul>
 
     <script>
      
@@ -15,18 +15,20 @@
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                var response = JSON.parse(xhttp.responseText);
-//               console.log(response.members);
-                var members = response.members;
+                var customers = response.customers;
                 
                 var output = "";
-                for (var i=0; i<members.length;i++)
+                for (var i=0; i<customers.length;i++)
                     {
-                        output += '<li>'+members[i].memID+'\t'+members[i].username+'</li>';
+                        output += '<li>'+customers[i].memID+'\t'+customers[i].username+'</li>';
                     }
-                document.getElementById('members').innerHTML = output;
+                
+                output += '<li>'+customers[0].address.lat+'</li>'
+                output += '<li>'+customers[0].membership[0].storeID+'</li>'
+                document.getElementById('cust').innerHTML = output;
             }
         };
-        xhttp.open("GET", "members.json", true);
+        xhttp.open("GET", "customers.json", true);
         xhttp.send();
         
     </script>

@@ -1,0 +1,46 @@
+{
+  "customers":[
+    {
+      "memID": 1,
+      "username": "mickey",
+      "password": "mouse",
+      "blacklisted":false,
+      "address":{
+          "lat":40.765319,
+          "lng":-73.993710
+      },
+        
+      "membership":[
+        {
+          "storeID": 1,
+          "type":"member",
+          "rating":3.4
+        },
+        {
+          "store":"littleItaly",
+          "type":"vip",
+          "rating":4.7
+        }
+      ]
+    },
+      
+    {
+      "memID": 2,
+      "username": "donald",
+      "password": "duck",
+      "blacklisted":false,
+      "address":{
+          "lat":40.765550,
+          "lng": -73.992792
+      },
+      "membership":[
+        {
+          "storeID": 2,
+          "type":"member",
+          "rating": 3.5
+        }
+      ]
+    }
+
+  ]
+}
