@@ -1,5 +1,5 @@
 {
-  "members":[
+  "customers":[
     {
       "memID": 1,
       "username": "mickey",
@@ -25,7 +25,7 @@
     },
       
     {
-      "memID": 1224,
+      "memID": 2,
       "username": "donald",
       "password": "duck",
       "blacklisted":false,
