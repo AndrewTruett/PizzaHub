@@ -121,7 +121,7 @@ function login() {
     var userNameStr = $("#username").val();
     var passwordStr = $("#password").val();
 
-    var selection = $("#test").val();
+    var selection = $("#type-selection").val();
     
  /*   
     if(userNameStr == "" || passwordStr == "") {
