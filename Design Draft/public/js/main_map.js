@@ -117,17 +117,23 @@ function saveStoreName() {
     });
 }
 
+function saveUserType(type) {
+    localStorage.setItem("userType", type);
+}
+
 function login() {
     var userNameStr = $("#username").val();
     var passwordStr = $("#password").val();
-
-    var selection = $("#type-selection").val();
     
     if(userNameStr == "" || passwordStr == "") {
         $("#username").val("");
         $("#password").val("");
         alert("Please enter your username and password");
-    } else {    
+        
+    } else {
+        
+        var selection = $("#type-selection").val();
+        saveUserType(selection);
         if(selection == "customer")
             window.location.href = "store_page.html";
         
