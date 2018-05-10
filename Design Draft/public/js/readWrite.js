@@ -33,7 +33,7 @@ function checkLoginCustomer(username,password,store)
 // console.log(checkLoginCustomer("mickey","mouse","littleItaly"));
 
 
-function checkUserType(username,store)
+function checkCustomerType(username,store)
 //returns visitor if user not found for store
 {
   var contents = fs.readFileSync("../system/customers.json");
@@ -55,6 +55,8 @@ function checkUserType(username,store)
 
   return "visitor";
 }
-// console.log(checkUserType("mickey","littleItaly"));
-// console.log(checkUserType("mickey","garlicNewYorkPizzaBar"));
-// console.log(checkUserType("mickey","donHyder"));
+
+
+// console.log(checkCustomerType("mickey","littleItaly"));
+// console.log(checkCustomerType("mickey","garlicNewYorkPizzaBar"));
+// console.log(checkCustomerType("mickey","donHyder"));
