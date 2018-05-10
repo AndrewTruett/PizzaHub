@@ -1,36 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        
+
 		<!--Title of the Page-->
         <title>Pizza Hub | Delivery</title>
-        
+
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
-		
+
 		<!--Bootstrap-->
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        
+
 		<!--CSS-->
 		<!--<link href="css/searchButtonStore.css" rel="stylesheet"> -->
-        <link href="css/phStyle.css" rel="stylesheet"> 
+        <link href="css/phStyle.css" rel="stylesheet">
         <link href="css/searchBar.css" rel="stylesheet">
         <link href="css/search.css" rel="stylesheet">
 		<link href="css/store_page.css" rel="stylesheet">
         <link href="css/cook_page.css" rel="stylesheet">
-        
+
         <!-- Load icon library -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        
-        
+
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
         <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
         <script src="js/delivery_page.js"></script>
         <!--Add js file here-->
-        
+
     </head>
-    
+
     <body>
 	  <div class="container-fluid">
 		<!--Navbar row-->
@@ -42,26 +42,26 @@
               </a>
             </div>
 		  </div>
-			
+
 		  <div class="col green-color">
 			<div class="" id="search-bar">
             <input type="text" id="searchterm" placeholder="Looking for a store?..." />
 			<!--update this later: onclick should be updated-->
             <button type="button" id="search" onclick="window.location.href='search_results.html'">Search</button>
             </div>
-		  </div>		
+		  </div>
 		</div>
         <!--End navbar-->
-        
+
         <div class="row name-row">
             <div class="col-6">
                 <p class="name-heading">Delivery Guy name here</p>
             </div>
-            
+
             <div class="col-3">
                 <div class="row">
                     <div class="col text-center">
-                        <p class="rating">Your rating</p>    
+                        <p class="rating">Your rating</p>
                     </div>
                 </div>
                 <div class="row">
@@ -70,11 +70,11 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="col-3">
                 <div class="row">
                     <div class="col text-center">
-                        <p class="rating">Your payrate</p>    
+                        <p class="rating">Your payrate</p>
                     </div>
                 </div>
                 <div class="row">
@@ -85,7 +85,7 @@
             </div>
         </div>
         <!--End of name row-->
-          
+
         <div class="row">
             <div class="col-8">
                 <p class="panel-heading">Ready to be Delivered</p>
@@ -102,12 +102,12 @@
                 </div>
                 <div class="row">
                     <div class="col text-center">
-                        <button type="button" class="btn-lg btn-secondary btn-style">Edit Delivery Route</button>
+                        <button type="button" class="btn-lg btn-secondary btn-style"onclick="window.location.href='get_direction_modal.html'">Edit Delivery Route</button>
                         <button type="button" class="btn-lg btn-primary btn-style">Deliver</button>
                     </div>
-                </div>    
+                </div>
             </div>
-            
+
             <div class="col-4">
                 <p class="panel-heading">Rate the Customer</p>
                 <p class="sub-item">Customer: Customer name</p><!--This field changes when an order is delivered-->
@@ -124,8 +124,8 @@
                 </div>
             </div>
         </div>
-        
-        
+
+
         </div>
     </body>
 </html>
