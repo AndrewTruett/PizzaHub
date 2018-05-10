@@ -123,75 +123,24 @@ function login() {
 
     var selection = $("#type-selection").val();
     
- /*   
     if(userNameStr == "" || passwordStr == "") {
         $("#username").val("");
         $("#password").val("");
         alert("Please enter your username and password");
-    }
-    else if((userNameStr == "" || passwordStr == "") && selection =="Visitor")  //if visitor skip to store page
-    {window.location.href="store_page.html";}
-    else {
-        //check for successful login here
-
-      //  var selection = $("#test").val();
-        
+    } else {    
         if(selection == "customer")
             window.location.href = "store_page.html";
+        
         else if(selection == "manager")
             window.location.href = "manager_page.html";
+        
         else if(selection == "cook")
             window.location.href="cook_page.html";
+            
         else if(selection == "deliveryGuy")
             window.location.href="delivery_page.html";
-        else if(selection == "Visitor")
-            window.location.href="store_page.html";
-
-        
-        //go to store page
-        window.location.href = "store_page.html";
-
-
-
-        //go to store page
-        window.location.href = "store_page.html";
-
-    }
-
-    */
-        if(selection == "customer"){
-            if(userNameStr == "" || passwordStr == "") {
-            $("#username").val("");
-            $("#password").val("");
-            alert("Please enter your username and password");
-            }
-            else
-            window.location.href = "store_page.html";}
-        else if(selection == "manager"){
-            if(userNameStr == "" || passwordStr == "") {
-            $("#username").val("");
-            $("#password").val("");
-            alert("Please enter your username and password");
-            }
-            else
-            window.location.href = "manager_page.html";}
-        else if(selection == "cook"){
-            if(userNameStr == "" || passwordStr == "") {
-            $("#username").val("");
-            $("#password").val("");
-            alert("Please enter your username and password");
-            }
-            else
-            window.location.href="cook_page.html";}
-        else if(selection == "deliveryGuy"){
-            if(userNameStr == "" || passwordStr == "") {
-            $("#username").val("");
-            $("#password").val("");
-            alert("Please enter your username and password");
-            }
-            else
-            window.location.href="delivery_page.html";}
+            
         else if(selection == "visitor")
             window.location.href="store_page.html";
-       
+        }   
 }
