@@ -1,8 +1,8 @@
 {
   "customers":[
     {
-      "username": "mickey",
-      "password": "mouse",
+      "username": "customer",
+      "password": "test",
       "blacklisted":false,
       "address":{
           "lat":40.765319,
@@ -11,12 +11,12 @@
         
       "membership":[
         {
-          "store":"littleItaly",
+          "store":"little_italy_pizza",
           "type":"member",
           "rating":3.4
         },
         {
-          "store":"garlicNewYorkPizzaBar",
+          "store":"garlic_new_york_pizza_bar",
           "type":"vip",
           "rating":4.7
         }
@@ -33,7 +33,7 @@
       },
       "membership":[
         {
-          "store":"littleItaly",
+          "store":"little_italy_pizza",
           "type":"member",
           "rating": 3.5
         }
