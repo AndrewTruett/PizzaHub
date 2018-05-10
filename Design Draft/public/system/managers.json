@@ -1,15 +1,14 @@
     {
-        "managers":[
-            {
-            "username":"manager",
-            "password":"test",
-            "store":"famousAmadeusPizza",
-            },
-            {
-            "username":"don",
-            "password":"hyder",
-            "store":"donHyder",
-            }
-            
-        ]
+    	"managers": [{
+    			"username": "manager",
+    			"password": "test",
+    			"store": "famousAmadeusPizza"
+    		},
+    		{
+    			"username": "don",
+    			"password": "hyder",
+    			"store": "donHyder"
+    		}
+
+    	]
     }
