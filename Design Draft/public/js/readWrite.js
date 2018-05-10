@@ -107,4 +107,24 @@ function checkCustomerBlacklisted(username)
   return false;
 }
 
-console.log(checkCustomerBlacklisted("mickey"));
+// console.log(checkCustomerBlacklisted("mickey"));
+
+
+function checkCustomerExists(username)
+//post-cond: returns if customer is in the system (true,false)
+{
+  var contents = fs.readFileSync("../system/customers.json");
+  var data = JSON.parse(contents);
+
+  for(var i=0; i<data.customers.length; i++)
+  {
+    if (data.customers[i].username == username)
+    {
+      return true;
+    }
+  }
+
+  return false;
+}
+
+// console.log(checkCustomerExists("mickey"));
