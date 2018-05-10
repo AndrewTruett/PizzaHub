@@ -3,7 +3,7 @@
             {
             "username":"cook",
             "password":"test",
-            "store":"famousAmadeusPizza",
+            "store":"famous_amadeus_pizza",
             "rating":4.3,
             "numOfOrders":50,
             "dropCounter":1,
@@ -11,9 +11,9 @@
             "laidOff":false
             },
             {
-            "username":"tahsin",
-            "password":"ishegay",
-            "store":"donHyder",
+            "username":"aka",
+            "password":"blah",
+            "store":"don_hyder",
             "rating":4.3,
             "numOfOrders":50,
             "dropCounter":1,
