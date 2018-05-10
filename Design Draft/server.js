@@ -31,36 +31,45 @@ app.get('/home', function(req, res) {//when user goes to domain.com/home this fu
 });
 
 //Create new user
-app.get('/:storename/newuser/:username/:password', function(req, res) {
+app.get('/:storename/newuser/:userType/:username/:password', function(req, res) {
     var username = req.params.username;
     var password = req.params.password;
     var storename = req.params.storename;
+    var userType = req.params.userType;
     //res.send('You requested to make a new record for ' + username+', with password '+password+' at the store '+ storename);
     
-    fs.readFile(__dirname+'/public/system/customers.json', function(err, data) {
-        var json = JSON.parse(data);
-        json.customers.push(
-            {
-            "username": username,
-            "password": password,
-            "blacklisted":false,
-            "address":{
-                "lat":40.765319,
-                "lng":-73.993710
-            },
+    if(userType == "cook") {
         
-            "membership":[
-            {
-                "store":storename,
-                "type":"member",
-                "rating":5
-            }   
-            ]
-            }
-        );
-        //console.log(json);
-        fs.writeFile(__dirname+'/public/system/customers.json', JSON.stringify(json));
-    });
+    } else if (userType == "manager") {
+        
+    } else if (userType == "deliveryGuy") {
+        
+    } else {
+        fs.readFile(__dirname+'/public/system/customers.json', function(err, data) {
+            var json = JSON.parse(data);
+            json.customers.push(
+                {
+                "username": username,
+                "password": password,
+                "blacklisted":false,
+                "address":{
+                    "lat":40.765319,
+                    "lng":-73.993710
+                },
+
+                "membership":[
+                {
+                    "store":storename,
+                    "type":"member",
+                    "rating":5
+                }   
+                ]
+                }
+            );
+            //console.log(json);
+            fs.writeFile(__dirname+'/public/system/customers.json', JSON.stringify(json));
+        });
+    }
     
 });
 
