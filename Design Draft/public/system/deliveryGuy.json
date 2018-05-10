@@ -1,9 +1,9 @@
     {
         "deliveryGuy":[
             {
-            "username":"dg",
+            "username":"deliveryguy",
             "password":"test",
-            "store":"famousAmadeusPizza",
+            "store":"famous_amadeus_pizza",
             "rating":4.3,
             "numOfOrders":50,
             "last1":4,
@@ -14,8 +14,8 @@
             },
             {
             "username":"tahsin",
-            "password":"isgay",
-            "store":"donHyder",
+            "password":"geeawhy",
+            "store":"don_hyder",
             "rating":4.3,
             "numOfOrders":50,
 			"last1":3,
