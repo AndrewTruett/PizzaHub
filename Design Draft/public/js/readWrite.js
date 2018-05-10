@@ -87,3 +87,24 @@ function checkCustomerRating(username,store)
 // console.log(checkCustomerRating("mickey","littleItaly"));
 // console.log(checkCustomerRating("mickey","garlicNewYorkPizzaBar"));
 // console.log(checkCustomerRating("mickey","donHyder"));
+
+
+function checkCustomerBlacklisted(username)
+//pre-cond: customer is already a member in any of the store
+//post-cond: returns blacklisted, also returns customer not found
+{
+  var contents = fs.readFileSync("../system/customers.json");
+  var data = JSON.parse(contents);
+
+  for(var i=0; i<data.customers.length; i++)
+  {
+    if (data.customers[i].username == username)
+    {
+      return data.customers[i].blacklisted;
+    }
+  }
+
+  return false;
+}
+
+console.log(checkCustomerBlacklisted("mickey"));
