@@ -64,7 +64,7 @@ app.get('/:storename/newuser/:username/:password', function(req, res) {
 
 
 //check login
-app.get('/:storeName/:userType/:username/:password/checkLogin',fucntion(req,res))
+app.get('/:storeName/:userType/:username/:password/checkLogin',function(req,res)
 {
   var username = req.params.username;
   var password = req.params.password;
@@ -92,6 +92,6 @@ app.get('/:storeName/:userType/:username/:password/checkLogin',fucntion(req,res)
   }
 
   res.send("false");
-}
+});
 
 app.listen(8080);
