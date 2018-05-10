@@ -160,4 +160,39 @@ function checkLoginCook(username,password,store)
   return false;
 }
 // console.log(checkLoginCook("cook","test","famousAmadeusPizza"));
+
 ////////////////////////////////////////////////<- cook
+
+
+//deliveryGuy --> //////////////////////////////////////////////
+function checkLoginDeliveryGuy(username,password,store)
+{
+  var contents = fs.readFileSync("../system/deliveryGuy.json");
+  var data = JSON.parse(contents);
+
+
+  for(var i=0; i<data.deliveryGuy.length; i++)
+  {
+    if (data.deliveryGuy[i].username == username)
+    {
+      if (data.deliveryGuy[i].store == store)
+      {
+        if (data.deliveryGuy[i].password == password)
+        {
+          return true;
+        }
+      }
+    }
+  }
+  return false;
+}
+console.log(checkLoginDeliveryGuy("dg","test","famousAmadeusPizza"));
+////////////////////////////////////////////////<- deliveryGuy
+
+
+//manager --> //////////////////////////////////////////////
+function checkLoginManager(username,password,store)
+{
+
+}
+////////////////////////////////////////////////<- manager
