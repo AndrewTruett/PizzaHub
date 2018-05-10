@@ -4,9 +4,9 @@ $(document).ready(function() {
         var currentStore = localStorage.getItem("currentStore").toLowerCase().trim().split(" ").join("_");//converts store name to lower case with underscores instead of spaces
         
         try {
-            var name = $("#first-name").val()+' '+$("#last-name").val();
-            alert(name);
-            xmlHttp.open("GET", currentStore+"/newuser/"+name, true);
+            var username = $("#username").val();
+            var password = $("#password").val();
+            xmlHttp.open("GET", currentStore+"/newuser/"+username+"/"+password, true);
             xmlHttp.onreadystatechange = handleServerResponse;
             xmlHttp.send(null);
         } catch(e) {
