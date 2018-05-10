@@ -31,7 +31,7 @@ app.get('/home', function(req, res) {//when user goes to domain.com/home this fu
 });
 
 //Create new user
-app.get('/:storename/newuser/:userType/:username/:password', function(req, res) {
+app.get('/:storename/newuser/:username/:password', function(req, res) {
     var username = req.params.username;
     var password = req.params.password;
     var storename = req.params.storename;
