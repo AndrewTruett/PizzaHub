@@ -5,6 +5,9 @@ var fs = require("fs");
 // console.log("User Name:",data.customers[0].memID);
 
 
+
+
+//customer --> //////////////////////////////////////////////
 function checkLoginCustomer(username,password,store)
 {
   var contents = fs.readFileSync("../system/customers.json");
@@ -126,5 +129,35 @@ function checkCustomerExists(username)
 
   return false;
 }
-
 // console.log(checkCustomerExists("mickey"));
+
+
+////////////////////////////////////////////////<- customer
+
+
+
+//cook --> //////////////////////////////////////////////
+function checkLoginCook(username,password,store)
+{
+  var contents = fs.readFileSync("../system/cooks.json");
+  var data = JSON.parse(contents);
+
+
+  for(var i=0; i<data.cooks.length; i++)
+  {
+    if (data.cooks[i].username == username)
+    {
+      if (data.cooks[i].store == store)
+      {
+        if (data.cooks[i].password == password)
+        {
+          return true;
+        }
+      }
+    }
+  }
+
+  return false;
+}
+// console.log(checkLoginCook("cook","test","famousAmadeusPizza"));
+////////////////////////////////////////////////<- cook
