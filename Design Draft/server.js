@@ -35,7 +35,6 @@ app.get('/:storename/newuser/:username/:password', function(req, res) {
     var username = req.params.username;
     var password = req.params.password;
     var storename = req.params.storename;
-    var userType = req.params.userType;
     //res.send('You requested to make a new record for ' + username+', with password '+password+' at the store '+ storename);
 
     fs.readFile(__dirname+'/public/system/customers.json', function(err, data) {
@@ -61,10 +60,6 @@ app.get('/:storename/newuser/:username/:password', function(req, res) {
         //console.log(json);
         fs.writeFile(__dirname+'/public/system/customers.json', JSON.stringify(json));
     });
-});
-
-app.get('/test', function(req, res) {
-   res.send("This is a test"); 
 });
 
 
