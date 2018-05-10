@@ -35,7 +35,7 @@ app.get('/:storename/newuser/:username/:password', function(req, res) {
     var username = req.params.username;
     var password = req.params.password;
     var storename = req.params.storename;
-    res.send('You requested to make a new record for ' + username+', with password '+password+' at the store '+ storename);
+    //res.send('You requested to make a new record for ' + username+', with password '+password+' at the store '+ storename);
     
     fs.readFile(__dirname+'/public/system/customers.json', function(err, data) {
         var json = JSON.parse(data);
@@ -58,7 +58,7 @@ app.get('/:storename/newuser/:username/:password', function(req, res) {
             ]
             }
         );
-        console.log(json);
+        //console.log(json);
         fs.writeFile(__dirname+'/public/system/customers.json', JSON.stringify(json));
     });
     
