@@ -142,7 +142,6 @@ function checkLoginCook(username,password,store)
   var contents = fs.readFileSync("../system/cooks.json");
   var data = JSON.parse(contents);
 
-
   for(var i=0; i<data.cooks.length; i++)
   {
     if (data.cooks[i].username == username)
@@ -170,7 +169,6 @@ function checkLoginDeliveryGuy(username,password,store)
   var contents = fs.readFileSync("../system/deliveryGuy.json");
   var data = JSON.parse(contents);
 
-
   for(var i=0; i<data.deliveryGuy.length; i++)
   {
     if (data.deliveryGuy[i].username == username)
@@ -186,13 +184,32 @@ function checkLoginDeliveryGuy(username,password,store)
   }
   return false;
 }
-console.log(checkLoginDeliveryGuy("dg","test","famousAmadeusPizza"));
+// console.log(checkLoginDeliveryGuy("dg","test","famousAmadeusPizza"));
+
 ////////////////////////////////////////////////<- deliveryGuy
 
 
 //manager --> //////////////////////////////////////////////
 function checkLoginManager(username,password,store)
 {
+  var contents = fs.readFileSync("../system/managers.json");
+  var data = JSON.parse(contents);
 
+  for(var i=0; i<data.managers.length; i++)
+  {
+    if (data.managers[i].username == username)
+    {
+      if (data.managers[i].store == store)
+      {
+        if (data.managers[i].password == password)
+        {
+          return true;
+        }
+      }
+    }
+  }
+  return false;
 }
+// console.log(checkLoginManager("manager","test","famousAmadeusPizza"));
+
 ////////////////////////////////////////////////<- manager
