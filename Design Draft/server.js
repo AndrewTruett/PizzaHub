@@ -53,7 +53,7 @@ app.get('/:storename/newuser/:username/:password', function(req, res) {
             {
                 "store":storename,
                 "type":"member",
-                "rating":3.4
+                "rating":5
             }   
             ]
             }
