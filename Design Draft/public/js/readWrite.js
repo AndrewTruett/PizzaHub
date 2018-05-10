@@ -3,7 +3,9 @@ var fs = require("fs");
 // var contents = fs.readFileSync("../system/customers.json");
 // var data = JSON.parse(contents);
 // console.log("User Name:",data.customers[0].memID);
-function checkLoginCustomer(username,password)
+
+
+function checkLoginCustomer(username,password,store)
 {
   var contents = fs.readFileSync("../system/customers.json");
   var data = JSON.parse(contents);
@@ -14,18 +16,18 @@ function checkLoginCustomer(username,password)
     {
       if (data.customers[i].password == password)
       {
-        return true;
+        for (var j = 0; j < data.customers[i].membership.length; j++)
+        {
+          if (data.customers[i].membership[j].store == store)
+          {
+            return true;
+          }
+        }
       }
     }
   }
-  return false;
+
+    return false;
 }
 
-// console.log(checkLoginCustomer("mickey","mouse"));
-
-
-function checkUserType()
-{
-  var contents = fs.readFileSync("../system/customers.json");
-  var data = JSON.parse(contents);
-}
+// console.log(checkLoginCustomer("mickey","mouse","littleItaly"));
