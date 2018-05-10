@@ -11,7 +11,7 @@ app.get('/home', function(req, res) {//when user goes to domain.com/home this fu
     //res.send('Home page via /home');
     //res.sendFile("../../index.html");
     res.sendFile(__dirname+'/public/index.html');
-    
+
     /*******This is how to write to a text file.
     fs.writeFile(__dirname+'/public/system/test.txt', 'Hey there!', function(err) {
         if(err) {
@@ -20,7 +20,7 @@ app.get('/home', function(req, res) {//when user goes to domain.com/home this fu
 
         console.log("The file was saved!");
     });*/
-    
+
     /*******This is how to read a text file. Whatever was in the text file comes back as the data argument. err is the error, if there ws no error, err is null.
     fs.readFile(__dirname+'/public/system/test.txt', 'utf8', function (err,data) {
         if (err) {
@@ -53,7 +53,7 @@ app.get('/:storename/newuser/:username/:password', function(req, res) {
                 "store":storename,
                 "type":"member",
                 "rating":5
-            }   
+            }
             ]
             }
         );
@@ -62,5 +62,36 @@ app.get('/:storename/newuser/:username/:password', function(req, res) {
     });
 });
 
+
+//check login
+app.get('/:storeName/:userType/:username/:password/checkLogin',fucntion(req,res))
+{
+  var username = req.params.username;
+  var password = req.params.password;
+  var store = req.params.storename;
+  var userType = req.params.userType;
+
+  var contents = fs.readFileSync("../system/customers.json");
+  var data = JSON.parse(contents);
+
+  for(var i=0; i<data.customers.length; i++)
+  {
+    if (data.customers[i].username == username)
+    {
+      if (data.customers[i].password == password)
+      {
+        for (var j = 0; j < data.customers[i].membership.length; j++)
+        {
+          if (data.customers[i].membership[j].store == store)
+          {
+            res.send("true");
+          }
+        }
+      }
+    }
+  }
+
+  res.send("false");
+}
 
 app.listen(8080);
