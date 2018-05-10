@@ -9,6 +9,8 @@ $(document).ready(function() {
             xmlHttp.open("GET", currentStore+"/newuser/"+username+"/"+password, true);
             xmlHttp.onreadystatechange = handleServerResponse;
             xmlHttp.send(null);
+            
+            window.location.href="store_page.html";//This will depend on the users position (ie manager, cust, dg, etc)
         } catch(e) {
             console.log(e.toString());
         }
