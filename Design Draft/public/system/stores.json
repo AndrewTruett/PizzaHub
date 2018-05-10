@@ -1,7 +1,7 @@
 {
   "stores":[
     {
-      "storeID":1,
+      "store":"garlicNYPizzaBar",
       "name":"Garlic New York Pizza Bar",
       "address":
       {
@@ -11,6 +11,67 @@
         "rating": 4.4,
         "foodRating":4.5,
         "deliveryRating":4.3
+    },
+	{
+      "store":"famousAmadeusPizza",
+      "name":"Famous Amadeus Pizza",
+      "address":
+      {
+        "lat":40.749902,
+        "lng":-73.994903
+      },
+        "rating": 4.4,
+        "foodRating":4.5,
+        "deliveryRating":4.3
+    },
+	{
+      "store":"donHyder",
+      "name":"Don Hyder",
+      "address":
+      {
+        "lat":40.757201,
+        "lng":-73.989968
+      },
+        "rating": 4.4,
+        "foodRating":4.5,
+        "deliveryRating":4.3
+    },
+	{
+      "store":"littleItalyPizza",
+      "name":"Little Italy Pizza",
+      "address":
+      {
+        "lat":40.747675,
+        "lng":-73.984818
+      },
+        "rating": 4.4,
+        "foodRating":4.5,
+        "deliveryRating":4.3
+    },
+	{
+      "store":"angelosPizza",
+      "name":"Angelos Pizza",
+      "address":
+      {
+        "lat":40.763813,
+        "lng":-73.982946
+      },
+        "rating": 4.4,
+        "foodRating":4.5,
+        "deliveryRating":4.3
+    },
+	{
+      "store":"angelosPizza",
+      "name":"Angelos Pizza",
+      "address":
+      {
+        "lat":40.765775,
+        "lng":-73.983938
+      },
+        "rating": 4.4,
+        "foodRating":4.5,
+        "deliveryRating":4.3
     }
+
   ]
 }
