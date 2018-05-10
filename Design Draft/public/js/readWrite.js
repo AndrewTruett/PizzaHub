@@ -21,4 +21,11 @@ function checkLoginCustomer(username,password)
   return false;
 }
 
-console.log(checkLoginCustomer("mickey","mouse"));
+// console.log(checkLoginCustomer("mickey","mouse"));
+
+
+function checkUserType()
+{
+  var contents = fs.readFileSync("../system/customers.json");
+  var data = JSON.parse(contents);
+}
