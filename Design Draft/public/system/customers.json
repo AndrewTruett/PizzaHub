@@ -1,7 +1,6 @@
 {
   "customers":[
     {
-      "memID": 1,
       "username": "mickey",
       "password": "mouse",
       "blacklisted":false,
@@ -12,12 +11,12 @@
         
       "membership":[
         {
-          "storeID": 1,
+          "store":"littleItaly",
           "type":"member",
           "rating":3.4
         },
         {
-          "store":"littleItaly",
+          "store":"garlicNewYorkPizzaBar",
           "type":"vip",
           "rating":4.7
         }
@@ -25,7 +24,6 @@
     },
       
     {
-      "memID": 2,
       "username": "donald",
       "password": "duck",
       "blacklisted":false,
@@ -35,7 +33,7 @@
       },
       "membership":[
         {
-          "storeID": 2,
+          "store":"littleItaly",
           "type":"member",
           "rating": 3.5
         }
