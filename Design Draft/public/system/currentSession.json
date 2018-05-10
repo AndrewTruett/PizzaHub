@@ -1,8 +1,7 @@
 {
     "session":{
         "type":"",
-        "name":"",
-        "id":0,
+        "username":"",
         "store":"",
         "address":{
             "lat":0,
@@ -10,3 +9,5 @@
         }
     }
 }
+
+
