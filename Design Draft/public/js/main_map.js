@@ -110,6 +110,7 @@ function saveStoreName() {
         var storeName = parentText.substr(0, parentText.indexOf("Rating"));
         $(".login-store-name").empty();
         $(".login-store-name").text(storeName);
+        
         localStorage.setItem("currentStore", storeName);
 
         $("#username").val("");
@@ -121,6 +122,7 @@ function saveUserType(type) {
     localStorage.setItem("userType", type);
 }
 
+
 function login() {
     var userNameStr = $("#username").val();
     var passwordStr = $("#password").val();
@@ -131,22 +133,57 @@ function login() {
         alert("Please enter your username and password");
         
     } else {
+        var userType = $("#type-selection").val();
+        saveUserType(userType);
+
+        var currentStore = localStorage.getItem("currentStore").toLowerCase().trim().split(" ").join("_");//converts store name to lower case with underscores instead of spaces;
         
-        var selection = $("#type-selection").val();
-        saveUserType(selection);
-        if(selection == "customer")
-            window.location.href = "store_page.html";
+        console.log("Attempting to login...");
         
-        else if(selection == "manager")
-            window.location.href = "manager_page.html";
-        
-        else if(selection == "cook")
-            window.location.href="cook_page.html";
+        //Check login here***
+        var xmlHttp = new XMLHttpRequest();
+
+        try{
+            console.log("Opening request");
+            xmlHttp.open("GET", currentStore+"/"+userType+"/"+userNameStr+"/"+passwordStr+"/checkLogin", true);
             
-        else if(selection == "deliveryGuy")
-            window.location.href="delivery_page.html";
+            //Handle server response
+            xmlHttp.onreadystatechange = function () {
+                if(xmlHttp.readyState == 4) {
+                    if(xmlHttp.status == 200) { //Everything went okay
+                        console.log("Successful login: "+xmlHttp.responseText);
+                        
+                        if(xmlHttp.responseText == "true") {
             
-        else if(selection == "visitor")
-            window.location.href="store_page.html";
-        }   
+                            if(userType == "customer")
+                                window.location.href = "store_page.html";
+
+                            else if(userType == "manager")
+                                window.location.href = "manager_page.html";
+
+                            else if(userType == "cook")
+                                window.location.href="cook_page.html";
+
+                            else if(userType == "deliveryGuy")
+                                window.location.href="delivery_page.html";
+
+                            else if(userType == "visitor")
+                                window.location.href="store_page.html";
+            
+                        } else {
+                            $("#username").val("");
+                            $("#password").val("");
+                            alert("The username and password did not match our records. Please try again.");
+                        }
+                        
+                    } else if (xmlHttp.status == 404) {
+                        console.log("404 not found");
+                    }
+                }
+            };
+            xmlHttp.send(null);
+        } catch(e) {
+            console.log(e.toString());
+        } 
+    }   
 }
