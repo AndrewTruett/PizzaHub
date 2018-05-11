@@ -72,7 +72,13 @@ $(document).ready(function() {
 
                         for(var j = 0; j<json.customers[i].membership.length; j++) {
                             if(json.customers[i].membership[j].store == currentStore)//user has to be member of this store
+                            {
+                              if (json.customers[i].membership[j].type != "pending") 
+                              {
                                 $("#customer-list").append('<tr><th><input type = "checkbox" name="record"></th><th>'+username+'</th><th>'+json.customers[i].membership[j].rating+'</th></tr>');
+
+                              }
+                            }
                         }
                     }
 
@@ -177,7 +183,7 @@ $(document).ready(function() {
                         for(var j = 0; j<json.customers[i].membership.length; j++) {
                             if(json.customers[i].membership[j].store == currentStore)//user has to be member of this store
                                 {
-                                  if (json.customers[i].membership[j].type == "pending") 
+                                  if (json.customers[i].membership[j].type == "pending")
                                   {
                                     $("#pending-customers").append('<a href="#" class="list-group-item list-group-item-action sub-item pop-item-entry" onclick="return false">'+username+'<br><p class="sub-heading">Placed at:<div id="time">'+json.customers[i].membership[j].rating+'</div><br> Price: $'+currentStore+'</p></a>');
                                     // $("#pending-customers").append('<tr><th><input type = "checkbox" name="record"></th><th>'+username+'</th><th>'+json.customers[i].membership[j].rating+'</th></tr>');
