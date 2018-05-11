@@ -53,7 +53,7 @@
 		  
 		  <!--Map row-->
 		  <div class="row">
-		    <div id="map">
+		    <div id="map" class="col-8">
                 
                 <script src="js/main_map.js"></script>
                 
@@ -62,7 +62,22 @@
               type="text/javascript"></script>
           
             </div>
+              
+
+              <div class="col-4">
+                <div class="row map-text black-color">
+                    <div class="col text-center">
+                        <p>3 nearest stores</p>
+                    </div>
+		      </div>
+                <p id="nearest-stores"></p>
+                <p id="nearest-stores-list"></p>
+              </div>
+
 		  </div>
+            
+            
+  
                 <!-- Login Modal -->
                 <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
                   <div class="modal-dialog" role="document">
@@ -107,10 +122,7 @@
         
         
         
-        <div>
-            <p id="nearest-stores"></p>
-            <p id="nearest-stores-list"></p>
-        </div>
+  
         
     </body>
 	
