@@ -133,40 +133,18 @@
                         <p class="sub-heading">Delivery Guy:</p>
                     </div>
                     <div class="col-6">
-                        <select>
-                            <option>Delivery guy Jim</option>
-                            <option>Driven Dan</option>
-                            <option>Some random guy that has a car</option>
-                            <option>Mark</option>
+                        <select id="delivery-guys">
+                            
                         </select>
                     </div>
                 </div>
-                <div class="list-group">
-                    <li class="list-group-item">
-                        Order 1<br><p class="sub-heading">Placed at: 12:00<br>Items: 3</p>
-                    </li>
-
-                    <li class="list-group-item">
-                        Order 1<br><p class="sub-heading">Placed at: 12:00<br>Items: 3</p>
-                    </li>
-
-                    <li class="list-group-item">
-                        Order 1<br><p class="sub-heading">Placed at: 12:00<br>Items: 3</p>
-                    </li>
-
-                    <li class="list-group-item">
-                        Order 1<br><p class="sub-heading">Placed at: 12:00<br>Items: 3</p>
-                    </li>
-
-                    <li class="list-group-item">
-                        Order 1<br><p class="sub-heading">Placed at: 12:00<br>Items: 3</p>
-                    </li>
+                <div class="list-group" id="ready-items">
 
                 </div>
 
                 <div class="row">
                     <div class="col text-center">
-                        <button type="button" class="btn-lg btn-success btn-style" id="deliver-btn">Send for Delivery</button><!--Sends order to delivery guy-->
+                        <button type="button" class="btn-lg btn-success btn-style" id="deliver-btn" onclick="sendToDeliveryGuy()">Send for Delivery</button><!--Sends order to delivery guy-->
                     </div>
                 </div>
             </div>
