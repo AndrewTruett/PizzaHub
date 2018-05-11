@@ -66,32 +66,45 @@ app.get('/:storename/newuser/:username/:password', function(req, res) {
 //check login
 app.get('/:storeName/:userType/:username/:password/checkLogin',function(req,res)
 {
-  var username = req.params.username;
-  var password = req.params.password;
-  var store = req.params.storename;
-  var userType = req.params.userType;
+    var username = req.params.username;
+    var password = req.params.password;
+    var store = req.params.storeName;
+    var userType = req.params.userType;
+    
+    console.log("Checking login information for "+username+" with the password "+password+" at the store "+store+" as a "+userType+".");
 
-  var contents = fs.readFileSync("../system/customers.json");
-  var data = JSON.parse(contents);
+    //if customer
+    fs.readFile(__dirname+'/public/system/customers.json', function(err, data) {
+        var json = JSON.parse(data);
+        
+        var found = false;
 
-  for(var i=0; i<data.customers.length; i++)
-  {
-    if (data.customers[i].username == username)
-    {
-      if (data.customers[i].password == password)
-      {
-        for (var j = 0; j < data.customers[i].membership.length; j++)
+        for(var i=0; i<json.customers.length && !found; i++)
         {
-          if (data.customers[i].membership[j].store == store)
-          {
-            res.send("true");
-          }
+            if (json.customers[i].username == username)
+            {
+                if (json.customers[i].password == password)
+                {
+                    for (var j = 0; j < json.customers[i].membership.length; j++)
+                    {
+                        if (json.customers[i].membership[j].store == store)
+                        {
+                            found = true;
+                        }
+                    }
+                }
+            }
         }
-      }
-    }
-  }
-
-  res.send("false");
+        
+        if(found) {
+            console.log("Login was successful");
+            res.send("true");
+        } else {
+            console.log("Login was not successful");
+            res.send("false");
+        }
+        
+    });
 });
 
 app.listen(8080);
