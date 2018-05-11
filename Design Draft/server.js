@@ -251,6 +251,29 @@ app.get('/setDelivered/:time',function(req,res)
     });
 	
 });
+
+app.get('/setCooked/:time',function(req,res)
+{
+	    fs.readFile(__dirname+'/public/system/orders.json', function(err, data) {
+        var json = JSON.parse(data);
+		var t = req.params.time;
+        
+        console.log("Time sent:"+t);
+		
+		for(var i=0; i<json.orders.length; i++)
+		{
+            console.log("Time: "+json.orders[i].time);
+			if(json.orders[i].time==t)
+			{
+				json.orders[i].status = "cooked";
+			}
+		}
+    
+        console.log("updated order to cooked");
+        fs.writeFile(__dirname+'/public/system/orders.json', JSON.stringify(json));
+    });
+	
+});
 	
 
 
