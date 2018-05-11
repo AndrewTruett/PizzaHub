@@ -119,10 +119,7 @@ function initMap(){
       var myLatLng = event.latLng;
       var lat = myLatLng.lat();
       var lng = myLatLng.lng();
-      // var nrstThree = threeNearest(lat,lng);
-      // console.log(nrstThree.nearest[i].name);
       threeNearest(lat,lng);
-      document.getElementById('nearest-stores').innerHTML = lat;
 });
     }
 
@@ -245,7 +242,7 @@ for (var i = 0; i < stores.length; i++)
   for (var i = 0; i < 3; i++)
   {
     console.log(nearest[i].name+" "+nearest[i].dist);
-    output += '<li> <span class="mm-store-name">'+nearest[i].name+'</span></li>'
+    output += '<li> <span class="mm-store-name"><button type="button" class="btn" data-toggle="modal" data-target="#loginModal" onclick="saveStoreName()" id="login-btn">'+nearest[i].name+'</button></span></li>'
   }
   document.getElementById('nearest-stores-list').innerHTML = output;
 
