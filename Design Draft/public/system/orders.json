@@ -1,0 +1,25 @@
+{
+    "orders":{
+		"status": "pending",
+		"customer": "customer",
+		"cook": "",
+		"deliveryGuy":"",
+		"store": "don_hyder",
+		"time": "12/1/2018 @ 12:01",
+		"items":
+		[
+			{
+				"name": "Pepperoni Pizza",
+				"price": 12,
+				"pizza": true
+			},
+			{
+				"name": "BBQ Chicken Pizza",
+				"price": 12,
+				"pizza": true
+			}
+		],
+		"instructions":""
+		
+    }
+}
