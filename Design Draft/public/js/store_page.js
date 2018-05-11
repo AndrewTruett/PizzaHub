@@ -1,7 +1,41 @@
 $(document).ready(function() {
     var storeName = localStorage.getItem("currentStore");
     $(".store-heading").text(storeName);
-
+    
+    var xmlHttp = new XMLHttpRequest();
+    
+    //Load employees
+    try{
+        xmlHttp.open("GET", "get/file/cooks.json", true);
+        
+        xmlHttp.onreadystatechange = function() {
+            if(xmlHttp.readyState == 4) {
+                if(xmlHttp.status == 200) { //Everything went okay
+                    console.log(JSON.parse(xmlHttp.responseText));
+                    var json = JSON.parse(xmlHttp.responseText);
+                    
+                    var currentStore = localStorage.getItem("currentStore").toLowerCase().trim().split(" ").join("_");//converts store name to lower case with underscores instead of spaces
+                    
+                    for(var i = 0; i<json.cooks.length; i++) {
+                        var username = json.cooks[i].username;
+                        var rating = json.cooks[i].rating;
+                        
+                        if(json.cooks[i].store == currentStore)//user has to be member of this store
+                                $("#cooks").append('<option value='+username+'>'+username+' '+rating+'</option>'); 
+                    }
+                } else if (xmlHttp.status == 404) {
+                    console.log("404 not found");
+                }
+            }
+        };
+        xmlHttp.send(null);
+        
+    } catch(e) {
+        console.log(e.toString());
+    }
+    
+    
+    
 
 
 
@@ -81,7 +115,7 @@ $(document).ready(function() {
         $(this).siblings().removeClass("active");
     });
 
-  });
+});
 
 //Maybe add store name in the future
 function Order(name, numItems, timestamp) {
