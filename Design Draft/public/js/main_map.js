@@ -107,7 +107,10 @@ function initMap(){
       var myLatLng = event.latLng;
       var lat = myLatLng.lat();
       var lng = myLatLng.lng();
-      alert( 'lat '+ lat + ' lng ' + lng );
+      // var nrstThree = threeNearest(lat,lng);
+      // console.log(nrstThree.nearest[i].name);
+      threeNearest(lat,lng);
+      document.getElementById('nearest-stores').innerHTML = lat;
 });
     }
 
@@ -117,7 +120,6 @@ function saveStoreName() {
         var storeName = parentText.substr(0, parentText.indexOf("Rating"));
         $(".login-store-name").empty();
         $(".login-store-name").text(storeName);
-
         localStorage.setItem("currentStore", storeName);
 
         $("#username").val("");
@@ -129,7 +131,6 @@ function saveUserType(type) {
     localStorage.setItem("userType", type);
 }
 
-
 function login() {
     var userNameStr = $("#username").val();
     var passwordStr = $("#password").val();
@@ -140,57 +141,109 @@ function login() {
         alert("Please enter your username and password");
 
     } else {
-        var userType = $("#type-selection").val();
-        saveUserType(userType);
 
-        var currentStore = localStorage.getItem("currentStore").toLowerCase().trim().split(" ").join("_");//converts store name to lower case with underscores instead of spaces;
+        var selection = $("#type-selection").val();
+        saveUserType(selection);
+        if(selection == "customer")
+            window.location.href = "store_page.html";
 
-        console.log("Attempting to login...");
+        else if(selection == "manager")
+            window.location.href = "manager_page.html";
 
-        //Check login here***
-        var xmlHttp = new XMLHttpRequest();
+        else if(selection == "cook")
+            window.location.href="cook_page.html";
 
-        try{
-            console.log("Opening request");
-            xmlHttp.open("GET", currentStore+"/"+userType+"/"+userNameStr+"/"+passwordStr+"/checkLogin", true);
+        else if(selection == "deliveryGuy")
+            window.location.href="delivery_page.html";
 
-            //Handle server response
-            xmlHttp.onreadystatechange = function () {
-                if(xmlHttp.readyState == 4) {
-                    if(xmlHttp.status == 200) { //Everything went okay
-                        console.log("Successful login: "+xmlHttp.responseText);
-
-                        if(xmlHttp.responseText == "true") {
-
-                            if(userType == "customer")
-                                window.location.href = "store_page.html";
-
-                            else if(userType == "manager")
-                                window.location.href = "manager_page.html";
-
-                            else if(userType == "cook")
-                                window.location.href="cook_page.html";
-
-                            else if(userType == "deliveryGuy")
-                                window.location.href="delivery_page.html";
-
-                            else if(userType == "visitor")
-                                window.location.href="store_page.html";
-
-                        } else {
-                            $("#username").val("");
-                            $("#password").val("");
-                            alert("The username and password did not match our records. Please try again.");
-                        }
-
-                    } else if (xmlHttp.status == 404) {
-                        console.log("404 not found");
-                    }
-                }
-            };
-            xmlHttp.send(null);
-        } catch(e) {
-            console.log(e.toString());
+        else if(selection == "visitor")
+            window.location.href="store_page.html";
         }
-    }
 }
+
+
+
+
+var garlicNewYorkPizzaBar = {lat: 40.745237, lng: -73.975891,name:"Garlic New York Pizza Bar",strName:"garlic_new_york_pizza_bar"};
+var famousAmadeusPizza = {lat: 40.749902, lng: -73.994903,name:"Famous Amadeus Pizza",strName:"famous_amadeus_pizza"};
+var donHyder = {lat: 40.757201, lng: -73.989968,name:"Don Hyder",strName:"don_hyder"};
+var littleItalyPizza = {lat: 40.747675, lng: -73.984818,name:"Little Italy Pizza",strName:"little_italy_pizza"};
+var angelosPizza = {lat: 40.763813, lng: -73.982946,name:"Angelos Pizza",strName:"angelos_pizza"}
+var mariellaPizza = {lat: 40.765775, lng: -73.983938,name:"Mariella Pizza",strName:"mariella_pizza"}
+
+var getDistance = function(place1,place2)
+{
+  var lat1 = place1.lat;
+  var lat2 = place2.lat;
+  var lng1 = place1.lng;
+  var lng2 = place2.lng;
+
+  var dLat = Math.pow((lat2-lat1),2);
+  var dLng = Math.pow((lng2-lng1),2);
+  var distance = Math.sqrt(dLat+dLng);
+
+  return distance;
+};
+
+var threeNearest = function(lt,ln)
+{
+  var userAddress = {lat:lt,lng:ln};
+
+  var stores = [garlicNewYorkPizzaBar,famousAmadeusPizza,donHyder,littleItalyPizza,angelosPizza,mariellaPizza];
+  var nearest= [
+    {
+      name:"",
+      dist:0
+    },
+    {
+      name:"",
+      dist:0
+    },
+    {
+      name:"",
+      dist:0
+    },
+    {
+      name:"",
+      dist:0
+    },
+    {
+      name:"",
+      dist:0
+    },
+    {
+      name:"",
+      dist:0
+    }
+  ];
+
+for (var i = 0; i < stores.length; i++)
+  {
+    var distance = getDistance(userAddress,stores[i]);
+    nearest[i].dist=distance;
+    nearest[i].name=stores[i].name;
+  }
+
+
+  var len = nearest.length;
+  for (var i = len-1; i>=0; i--)
+  {
+    for(var j = 1; j<=i; j++)
+    {
+      if(nearest[j-1].dist>nearest[j].dist){
+        var temp = nearest[j-1];
+        nearest[j-1] = nearest[j];
+        nearest[j] = temp;
+      }
+   }
+  }
+
+  var output = "";
+  for (var i = 0; i < 3; i++)
+  {
+    console.log(nearest[i].name+" "+nearest[i].dist);
+    output += '<li> <span class="mm-store-name">'+nearest[i].name+'</span></li>'
+  }
+  document.getElementById('nearest-stores-list').innerHTML = output;
+
+};
