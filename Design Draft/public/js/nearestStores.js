@@ -73,10 +73,10 @@ for (var i = 0; i < stores.length; i++)
 		nearest[j + 1].dist = tmp;
 	}
 
-  // for (var i = 0; i < 6; i++)
-  // {
-  //   console.log(nearest[i].name+" "+nearest[i].dist);
-  // }
+  for (var i = 0; i < 3; i++)
+  {
+    console.log(nearest[i].name+" "+nearest[i].dist);
+  }
 };
 
 threeNearest(40.765731626830025,-73.99088107940673);
