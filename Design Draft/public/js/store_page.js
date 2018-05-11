@@ -106,7 +106,7 @@ $(document).ready(function() {
     });
     //clickbutton to go to checkout
     $('#chk-btn').click(function() {
-  //window.location.href="checkout.html";
+        window.location.href="checkout.html";
 });
 
     //Handling of active list items
