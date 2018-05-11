@@ -1,4 +1,8 @@
 $(document).ready(function() {
+    
+    var username = localStorage.getItem("username");
+    $(".name-heading").text(username);
+    
     //Handling of active list items
     $("a").on("click", function(e){
         $(this).addClass("active");
@@ -10,11 +14,42 @@ $(document).ready(function() {
 function checkForOrders() {
     $("#pending-orders").empty();
     
-    var numOrders = localStorage.getItem("currentOrderID");
-    for(i = 1; i <= numOrders; i++) {
-        var currOrder = JSON.parse(localStorage.getItem("pendingOrder"+i));
-        if(currOrder != null) {
-            $("#pending-orders").append('<a href="#" class="list-group-item list-group-item-action sub-item pop-item-entry" onclick="return false">Order ' + i +'<br><p class="sub-heading">Placed at: ' + currOrder.timestamp + '<br>Items: ' + currOrder.numItems + '</p></a>');      
-        }
-    }   
+    var xmlHttp = new XMLHttpRequest();
+
+  //load orders
+  try{
+      xmlHttp.open("GET", "get/file/orders.json", true);
+
+      xmlHttp.onreadystatechange = function() {
+          if(xmlHttp.readyState == 4) {
+              if(xmlHttp.status == 200) { //Everything went okay
+                  console.log(JSON.parse(xmlHttp.responseText));
+                  var json = JSON.parse(xmlHttp.responseText);
+                  var cook = localStorage.getItem("username");
+
+                  var currentStore = localStorage.getItem("currentStore").toLowerCase().trim().split(" ").join("_");//converts store name to lower case with underscores instead of spaces
+
+                  for(var i = 0; i<json.orders.length; i++)
+                  {
+                    if (json.orders[i].cook == cook)
+                    {
+                      if (json.orders[i].status == "pending")
+                      {
+                        $("#pending-orders").append('<a href="#" class="list-group-item list-group-item-action sub-item pop-item-entry" onclick="return false">'+json.orders[i].customer+'<br><p class="sub-heading">Placed at:'+json.orders[i].time+'<br> Price: $'+json.orders[i].price+'</p></a>');
+                      }
+                    }
+                  }
+
+              } else if (xmlHttp.status == 404) {
+                  console.log("404 not found");
+              }
+          }
+      };
+
+      xmlHttp.send(null);
+
+  } catch(e) {
+      console.log(e.toString());
+  }
+    
 }
