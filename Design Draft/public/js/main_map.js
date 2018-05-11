@@ -174,15 +174,6 @@ function login() {
 }
 
 
-
-
-var garlicNewYorkPizzaBar = {lat: 40.745237, lng: -73.975891,name:"Garlic New York Pizza Bar",strName:"garlic_new_york_pizza_bar"};
-var famousAmadeusPizza = {lat: 40.749902, lng: -73.994903,name:"Famous Amadeus Pizza",strName:"famous_amadeus_pizza"};
-var donHyder = {lat: 40.757201, lng: -73.989968,name:"Don Hyder",strName:"don_hyder"};
-var littleItalyPizza = {lat: 40.747675, lng: -73.984818,name:"Little Italy Pizza",strName:"little_italy_pizza"};
-var angelosPizza = {lat: 40.763813, lng: -73.982946,name:"Angelos Pizza",strName:"angelos_pizza"}
-var mariellaPizza = {lat: 40.765775, lng: -73.983938,name:"Mariella Pizza",strName:"mariella_pizza"}
-
 var getDistance = function(place1,place2)
 {
   var lat1 = place1.lat;
