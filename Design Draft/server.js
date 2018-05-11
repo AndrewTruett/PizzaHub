@@ -83,7 +83,7 @@ app.get('/:storeName/:userType/:username/:password/checkLogin',function(req,res)
         {
             if (json.customers[i].username == username)
             {
-                if (json.customers[i].password == password)
+                if (json.customers[i].password == password && !json.customers[i].blacklisted)
                 {
                     for (var j = 0; j < json.customers[i].membership.length; j++)
                     {
