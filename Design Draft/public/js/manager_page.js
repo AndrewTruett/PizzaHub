@@ -73,7 +73,7 @@ $(document).ready(function() {
                         for(var j = 0; j<json.customers[i].membership.length; j++) {
                             if(json.customers[i].membership[j].store == currentStore)//user has to be member of this store
                             {
-                              if (json.customers[i].membership[j].type != "pending") 
+                              if (json.customers[i].membership[j].type != "pending")
                               {
                                 $("#customer-list").append('<tr><th><input type = "checkbox" name="record"></th><th>'+username+'</th><th>'+json.customers[i].membership[j].rating+'</th></tr>');
 
@@ -177,6 +177,7 @@ $(document).ready(function() {
 
                     var currentStore = localStorage.getItem("currentStore").toLowerCase().trim().split(" ").join("_");//converts store name to lower case with underscores instead of spaces
 
+                    var output = "";
                     for(var i = 0; i<json.customers.length; i++) {
                         var username = json.customers[i].username;
 
@@ -185,13 +186,22 @@ $(document).ready(function() {
                                 {
                                   if (json.customers[i].membership[j].type == "pending")
                                   {
-                                    $("#pending-customers").append('<a href="#" class="list-group-item list-group-item-action sub-item pop-item-entry" onclick="return false">'+username+'<br><p class="sub-heading">Placed at:<div id="time">'+json.customers[i].membership[j].rating+'</div><br> Price: $'+currentStore+'</p></a>');
-                                    // $("#pending-customers").append('<tr><th><input type = "checkbox" name="record"></th><th>'+username+'</th><th>'+json.customers[i].membership[j].rating+'</th></tr>');
-
+                                    output += "<h1>"+username+"</h1>";
+                                    output += "<a href="+json.customers[i].photoID+"> Click here to see photo ID </a>  <br>reviews from other stores<br>";
+                                    // $("#pending-customers").append('<a href="#" class="list-group-item list-group-item-action sub-item pop-item-entry" onclick="return false">'+username+'<br><p class="sub-heading">Placed at:<div id="time">'+json.customers[i].membership[j].rating+'</div><br> Price: $'+currentStore+'</p></a>');
+                                    for (var k=0; k<json.customers[i].membership.length; k++)
+                                    {
+                                      output+="<li> store: ["+json.customers[i].membership[k].store+"]   rating:["+json.customers[i].membership[k].rating+"]</li><br>";
+                                    }
+                                    $("#pending-customers").append('<a href="#" class="list-group-item list-group-item-action sub-item pop-item-entry" onclick="return false">'+output+'</a>');
+                                    output="";
                                   }
                                 }
                         }
                     }
+
+
+                    // $("#pending-customers").append('<tr><th><input type = "checkbox" name="record"></th><th>'+username+'</th><th>'+json.customers[i].membership[j].rating+'</th></tr>');
 
                 } else if (xmlHttp10.status == 404) {
                     console.log("404 not found");
