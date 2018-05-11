@@ -2,12 +2,12 @@
     	"managers": [{
     			"username": "manager",
     			"password": "test",
-    			"store": "famousAmadeusPizza"
+    			"store": "famous_amadeus_pizza"
     		},
     		{
     			"username": "don",
     			"password": "hyder",
-    			"store": "donHyder"
+    			"store": "don_hyder"
     		}
 
     	]
