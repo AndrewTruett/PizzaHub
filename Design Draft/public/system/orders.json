@@ -1,5 +1,5 @@
 {
-    "orders":{
+    "orders":[{
 		"status": "cooked",
 		"customer": "customer",
 		"cook": "",
@@ -11,5 +11,5 @@
 			"lat":40.756868,
 			"lng":-73.985345
 			}
-    }
+    }]
 }
