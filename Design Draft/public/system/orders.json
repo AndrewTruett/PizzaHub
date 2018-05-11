@@ -1,10 +1,10 @@
 {
     "orders":{
-		"status": "pending",
+		"status": "cooked",
 		"customer": "customer",
 		"cook": "",
-		"deliveryGuy":"",
-		"store": "don_hyder",
+		"deliveryGuy":"deliveryguy",
+		"store": "famous_amadeus_pizza",
 		"time": "12/1/2018 @ 12:01",
         "price": 25,
 		"instructions":""
