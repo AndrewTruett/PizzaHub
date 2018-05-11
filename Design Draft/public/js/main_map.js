@@ -157,6 +157,11 @@ function saveUserType(type) {
     localStorage.setItem("userType", type);
 }
 
+function continueAsAVisitor()
+{
+  saveUserType("visitor");
+}
+
 
 function login() {
     var userNameStr = $("#username").val();
