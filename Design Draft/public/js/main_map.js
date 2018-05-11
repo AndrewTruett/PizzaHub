@@ -130,7 +130,22 @@ function saveStoreName() {
         var storeName = parentText.substr(0, parentText.indexOf("Rating"));
         $(".login-store-name").empty();
         $(".login-store-name").text(storeName);
-        
+
+        localStorage.setItem("currentStore", storeName);
+
+        $("#username").val("");
+        $("#password").val("");
+    });
+}
+
+
+function saveStoreNameNearestStores() {
+    $(document).on("click", "#login-btn", function(){
+        var parentText = $(this).parent().text();
+        var storeName = parentText;
+        $(".login-store-name").empty();
+        $(".login-store-name").text(storeName);
+
         localStorage.setItem("currentStore", storeName);
 
         $("#username").val("");
@@ -146,35 +161,35 @@ function saveUserType(type) {
 function login() {
     var userNameStr = $("#username").val();
     var passwordStr = $("#password").val();
-    
+
     if(userNameStr == "" || passwordStr == "") {
         $("#username").val("");
         $("#password").val("");
         alert("Please enter your username and password");
-        
+
     } else {
         var userType = $("#type-selection").val();
         saveUserType(userType);
 
         var currentStore = localStorage.getItem("currentStore").toLowerCase().trim().split(" ").join("_");//converts store name to lower case with underscores instead of spaces;
-        
+
         console.log("Attempting to login...");
-        
+
         //Check login here***
         var xmlHttp = new XMLHttpRequest();
 
         try{
             console.log("Opening request");
             xmlHttp.open("GET", currentStore+"/"+userType+"/"+userNameStr+"/"+passwordStr+"/checkLogin", true);
-            
+
             //Handle server response
             xmlHttp.onreadystatechange = function () {
                 if(xmlHttp.readyState == 4) {
                     if(xmlHttp.status == 200) { //Everything went okay
                         console.log("Successful login: "+xmlHttp.responseText);
-                        
+
                         if(xmlHttp.responseText == "true") {
-            
+
                             if(userType == "customer")
                                 window.location.href = "store_page.html";
 
@@ -189,13 +204,13 @@ function login() {
 
                             else if(userType == "visitor")
                                 window.location.href="store_page.html";
-            
+
                         } else {
                             $("#username").val("");
                             $("#password").val("");
                             alert("The username and password did not match our records. Please try again.");
                         }
-                        
+
                     } else if (xmlHttp.status == 404) {
                         console.log("404 not found");
                     }
@@ -204,8 +219,8 @@ function login() {
             xmlHttp.send(null);
         } catch(e) {
             console.log(e.toString());
-        } 
-    }   
+        }
+    }
 }
 //************************************************************
 
@@ -282,7 +297,7 @@ for (var i = 0; i < stores.length; i++)
   for (var i = 0; i < 3; i++)
   {
     console.log(nearest[i].name+" "+nearest[i].dist);
-    output += '<li> <span class="mm-store-name"><button type="button" class="btn" data-toggle="modal" data-target="#loginModal" onclick="saveStoreName()" id="login-btn">'+nearest[i].name+'</button></span></li>'
+    output += '<li> <span class="mm-store-name"><button type="button" class="btn" data-toggle="modal" data-target="#loginModal" onclick="saveStoreNameNearestStores()" id="login-btn">'+nearest[i].name+'</button></span></li>'
   }
   document.getElementById('nearest-stores-list').innerHTML = output;
 
