@@ -42,15 +42,17 @@ $(document).ready(function() {
         console.log(e.toString());
     }
     
+    var xmlHttp2 = new XMLHttpRequest();
+    
     //Load employees
     try{
-        xmlHttp.open("GET", "get/file/cooks.json", true);
+        xmlHttp2.open("GET", "get/file/cooks.json", true);
         
-        xmlHttp.onreadystatechange = function() {
-            if(xmlHttp.readyState == 4) {
-                if(xmlHttp.status == 200) { //Everything went okay
-                    console.log(JSON.parse(xmlHttp.responseText));
-                    var json = JSON.parse(xmlHttp.responseText);
+        xmlHttp2.onreadystatechange = function() {
+            if(xmlHttp2.readyState == 4) {
+                if(xmlHttp2.status == 200) { //Everything went okay
+                    console.log(JSON.parse(xmlHttp2.responseText));
+                    var json = JSON.parse(xmlHttp2.responseText);
                     
                     var currentStore = localStorage.getItem("currentStore").toLowerCase().trim().split(" ").join("_");//converts store name to lower case with underscores instead of spaces
                     
@@ -60,13 +62,13 @@ $(document).ready(function() {
                         if(json.cooks[i].store == currentStore)//user has to be member of this store
                                 $("#employee-list").append('<tr><th><input type = "checkbox" name="record"></th><th>'+username+'</th><th>'+json.cooks[i].rating+'</th></tr>'); 
                     }
-                } else if (xmlHttp.status == 404) {
+                } else if (xmlHttp2.status == 404) {
                     console.log("404 not found");
                 }
             } 
         };
         
-        xmlHttp.send(null);
+        xmlHttp2.send(null);
         
     } catch(e) {
         console.log(e.toString());
