@@ -13,7 +13,7 @@ $(document).ready(function() {
 checkForOrders();
 
 function processOrder() {
-    var time = $("#time").text();
+    var time = $(".active #time").text();
     
     var xmlHttp2 = new XMLHttpRequest();
 
