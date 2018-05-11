@@ -4,7 +4,7 @@
       "username": "customer",
       "password": "test",
       "blacklisted":false,
-	  "photo-id":"http://www.zotei.com/product_images/plastic_card/photo_ID_card/photo_ID_card_04.jpg",
+	  "photoID":"http://www.zotei.com/product_images/plastic_card/photo_ID_card/photo_ID_card_04.jpg",
       "address":{
           "lat":40.765319,
           "lng":-73.993710
@@ -17,7 +17,7 @@
           "rating":3.4
         },
         {
-          "store":"garlic_new_york_pizza_bar",
+          "store":"don_hyder",
           "type":"vip",
           "rating":4.7
         }
@@ -28,15 +28,15 @@
       "username": "donald",
       "password": "duck",
       "blacklisted":false,
-	  "photo-id":"http://www.zotei.com/product_images/plastic_card/photo_ID_card/photo_ID_card_04.jpg",
+	  "photoID":"http://www.zotei.com/product_images/plastic_card/photo_ID_card/photo_ID_card_04.jpg",
       "address":{
           "lat":40.765550,
           "lng": -73.992792
       },
       "membership":[
         {
-          "store":"little_italy_pizza",
-          "type":"member",
+          "store":"don_hyder",
+          "type":"pending",
           "rating": 3.5
         }
       ]
