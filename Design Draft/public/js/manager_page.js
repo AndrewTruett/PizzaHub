@@ -35,7 +35,7 @@ $(document).ready(function() {
 
                           for(var i = 0; i<json.orders.length; i++)
                           {
-                            if (json.orders[i].status == "cooked")
+                            if (json.orders[i].status == "cooked" && json.orders[i].deliveryGuy == "")
                             {
                                 $("#ready-items").append('<li class="list-group-item">'+json.orders[i].customer+'<br><p class="sub-heading">Placed at:<div id="time">'+json.orders[i].time+'</div><br> Price: $'+json.orders[i].price+'</p></li>');
 
@@ -187,7 +187,7 @@ $(document).ready(function() {
                         for(var j = 0; j<json.customers[i].membership.length; j++) {
                             if(json.customers[i].membership[j].store == currentStore)//user has to be member of this store
                                 {
-                                  if (json.customers[i].membership[j].type == "pending" && json.customers[i].deliveryGuy == "")
+                                  if (json.customers[i].membership[j].type == "pending")
                                   {
                                     output += "<h1>"+username+"</h1>";
                                     output += "<a href="+json.customers[i].photoID+"> Click here to see photo ID </a>  <br>reviews from other stores<br>";

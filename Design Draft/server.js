@@ -281,7 +281,8 @@ app.get('/setDeliveryGuy/:time/:deliveryGuy',function(req,res)
 	    fs.readFile(__dirname+'/public/system/orders.json', function(err, data) {
         var json = JSON.parse(data);
 		var t = req.params.time;
-        var guy = req.params.deliverGuy;
+        var guy = req.params.deliveryGuy;
+            console.log("Sent deliveryguy: "+guy);
 
         console.log("Time sent:"+t);
 
@@ -290,7 +291,7 @@ app.get('/setDeliveryGuy/:time/:deliveryGuy',function(req,res)
             console.log("Time: "+json.orders[i].time);
 			if(json.orders[i].time==t)
 			{
-				json.orders[i].deliverGuy = guy;
+				json.orders[i].deliveryGuy = guy;
 			}
 		}
 

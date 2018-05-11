@@ -1,1 +1,1 @@
-{"orders":[{"status":"cooked","customer":"customer","cook":"cook","deliveryGuy":"deliveryguy","store":"famous_amadeus_pizza","time":"12-1-2018@12:01","price":25,"address":{"lat":40.756868,"lng":-73.985345}}]}
+{"orders":[{"status":"delivered","customer":"donald","cook":"cook","deliveryGuy":"tahsin","store":"don_hyder","time":"5-11-2018@14:31","price":"24","address":{"lat":40.756868,"lng":-73.985345},"deliverGuy":"tahsin"}]}
