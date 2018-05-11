@@ -213,6 +213,9 @@ app.get('/get/file/:userType',function(req,res) {
         
     else if (userType == "stores.json") 
         res.sendFile(__dirname+'/public/system/stores.json');
+    
+    else if (userType == "orders.json") 
+        res.sendFile(__dirname+'/public/system/orders.json');
         
     else
         res.status(404).send('404 not found');
