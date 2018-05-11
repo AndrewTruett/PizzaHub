@@ -59,7 +59,17 @@
 
         <div class="row name-row">
             <div class="col-6">
-                <p class="name-heading">Manager name here</p>
+                <div class="row">
+                    <div class="col">
+                        <p class="name-heading">Manager name here</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p class="name-heading" id="store-name"></p>
+                    </div>
+                </div>
+                
             </div>
 
             <div class="col-3">
@@ -173,31 +183,31 @@
                                 <th style="width:5%;">Rating</th>
                                 </tr>
                             </thead>
+                            
+                            <tbody id="customer-list">
+                                <tr>
+                                    <th></th>
+                                </tr>
+                            </tbody>
 
                         </table>
             </div>
         </div>
             
         <div class="row">
-            <div class="col-4">
-                Employee: <input type="text" id="Emp" value="Full Name">
-                Employee type: <input type="text" id="EmpType"  value="">
-                <button type="button" class="btn-lg btn-success btn-style" id="deliver-btn">Laid Off</button>
+            <div class="col-4 text-center">
+                <button type="button" class="btn-lg btn-success btn-style" id="deliver-btn">Fire</button><!--Needs onclick-->
                 
-            </div>
-            
-
-                
-            <div class="col-4">
-                Customer: <input type="text" id="cust" value="Full Name">
-                <button type="button" class="btn-lg btn-success btn-style" id="deliver-btn">Promote</button>
-                <button type="button" class="btn-lg btn-success btn-style" id="deliver-btn">Demote</button>
-                <button type="button" class="btn-lg btn-success btn-style" id="deliver-btn">Blacklist</button>
             </div>
             
             <div class="col-4 text-center">
                 <button type="button" onclick="window.location.href='manage_payroll.html'" class="btn-lg btn-success btn-style" id="deliver-btn">Payroll Page</button>
-                <button type="button" class="btn-lg btn-success btn-style" id="refresh-btn" onclick="populateLists()">Refresh</button>
+            </div>
+            
+            <div class="col-4 text-center">
+                <button type="button" class="btn-lg btn-success btn-style" id="deliver-btn">Promote</button>
+                <button type="button" class="btn-lg btn-success btn-style" id="deliver-btn">Demote</button>
+                <button type="button" class="btn-lg btn-success btn-style" id="deliver-btn">Blacklist</button>
             </div>
         </div>
 
