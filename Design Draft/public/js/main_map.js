@@ -136,6 +136,20 @@ function saveStoreName() {
     });
 }
 
+function saveStoreNameNearestStores()
+{
+  $(document).on("click", "#login-btn", function(){
+      var parentText = $(this).parent().text();
+      var storeName = parentText;
+      $(".login-store-name").empty();
+      $(".login-store-name").text(storeName);
+      localStorage.setItem("currentStore", storeName);
+
+      $("#username").val("");
+      $("#password").val("");
+  });
+}
+
 function saveUserType(type) {
     localStorage.setItem("userType", type);
 }
@@ -242,7 +256,7 @@ for (var i = 0; i < stores.length; i++)
   for (var i = 0; i < 3; i++)
   {
     console.log(nearest[i].name+" "+nearest[i].dist);
-    output += '<li> <span class="mm-store-name"><button type="button" class="btn" data-toggle="modal" data-target="#loginModal" onclick="saveStoreName()" id="login-btn">'+nearest[i].name+'</button></span></li>'
+    output += '<li> <span class="mm-store-name"><button type="button" class="btn" data-toggle="modal" data-target="#loginModal" onclick="saveStoreNameNearestStores()" id="login-btn">'+nearest[i].name+'</button></span></li>'
   }
   document.getElementById('nearest-stores-list').innerHTML = output;
 
