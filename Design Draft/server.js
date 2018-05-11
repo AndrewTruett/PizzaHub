@@ -209,7 +209,7 @@ app.get('/get/file/:userType',function(req,res) {
         res.sendFile(__dirname+'/public/system/cooks.json');
         
     else if (userType == "deliveryGuys.json") 
-        res.sendFile(__dirname+'/public/system/deliverGuys.json');
+        res.sendFile(__dirname+'/public/system/deliveryGuys.json');
         
     else if (userType == "stores.json") 
         res.sendFile(__dirname+'/public/system/stores.json');
