@@ -106,7 +106,7 @@ $(document).ready(function() {
     });
     //clickbutton to go to checkout
     $('#chk-btn').click(function() {
-  window.location.href="checkout.html";
+  //window.location.href="checkout.html";
 });
 
     //Handling of active list items
@@ -136,25 +136,28 @@ function saveOrder() {
         if(minutes < 10)
             minutes = '0'+minutes;
 
-        today = today.getMonth()+1 + '/' + today.getDate() + '/' + today.getFullYear() + ' @ ' + today.getHours() + ':' + minutes;
+        today = today.getMonth()+1 + '-' + today.getDate() + '-' + today.getFullYear() + '@' + today.getHours() + ':' + minutes;
+        
+        var currentStore = localStorage.getItem("currentStore").toLowerCase().trim().split(" ").join("_");//converts store name to lower case with underscores instead of spaces
+        var username = localStorage.getItem("username");
+        var cook = $("#cooks").val();
+        var specInstructions = $("#specInstructions").text();
+        var price = $("#total-label").text().match(/\$(\d+)/)[1];
+        
+        
+        var xmlHttp2 = new XMLHttpRequest();
+        xmlHttp2.open("GET", "neworder/"+username+"/"+cook+"/"+currentStore+"/"+price+"/"+today, true);
+        xmlHttp2.onreadystatechange = function() {
+            if(xmlHttp2.readyState == 4) {
+                if(xmlHttp2.status == 200) { //Everything went okay
+                    console.log(xmlHttp2.responseText);
+                } else if (xmlHttp2.status == 404) {
+                    console.log("404 not found");
+                }
+            }       
+            
+        };
+        xmlHttp2.send(null);
 
-        //Create order
-        var newOrder = new Order("Andrew", numItems, today);
-
-        if(localStorage.getItem("currentOrderID") == null)
-            localStorage.setItem("currentOrderID", 1);
-
-        //alert(localStorage.getItem("currentOrderID"));
-
-        var orderID = localStorage.getItem("currentOrderID");
-        localStorage.setItem("pendingOrder"+orderID, JSON.stringify(newOrder));
-        //Update orderID.
-        var newOrderID = parseInt(orderID) + 1;
-        localStorage.setItem("currentOrderID", newOrderID);
-
-        /*Test code
-        var test = localStorage.getItem("pendingOrder1");
-        alert(test);
-        */
     }
 }

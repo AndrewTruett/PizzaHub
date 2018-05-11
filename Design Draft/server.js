@@ -4,30 +4,11 @@ var app = express();
 var fs = require('fs');
 app.use(express.static('public'))
 
-app.get('/', function(req, res) {//when user goes to domain.com/ this function is fired
+app.get('/', function(req, res) {
     res.sendFile(__dirname+'/public/index.html');
 });
-app.get('/home', function(req, res) {//when user goes to domain.com/home this function is fired
-    //res.send('Home page via /home');
-    //res.sendFile("../../index.html");
+app.get('/home', function(req, res) {
     res.sendFile(__dirname+'/public/index.html');
-
-    /*******This is how to write to a text file.
-    fs.writeFile(__dirname+'/public/system/test.txt', 'Hey there!', function(err) {
-        if(err) {
-            return console.log(err);
-        }
-
-        console.log("The file was saved!");
-    });*/
-
-    /*******This is how to read a text file. Whatever was in the text file comes back as the data argument. err is the error, if there ws no error, err is null.
-    fs.readFile(__dirname+'/public/system/test.txt', 'utf8', function (err,data) {
-        if (err) {
-            return console.log(err);
-        }
-        console.log(data);
-    });*/
 });
 
 //Create new user
@@ -62,6 +43,36 @@ app.get('/:storename/newuser/:username/:password', function(req, res) {
     });
 });
 
+//Create new order
+app.get('/neworder/:username/:cook/:currentStore/:price/:today', function(req, res) {
+    var username = req.params.username;
+    var cook = req.params.cook;
+    var currentStore = req.params.currentStore;
+    var today = req.params.today;
+    var price = req.params.price;
+    var specInstructions = req.params.specInstructions;
+    
+    fs.readFile(__dirname+'/public/system/orders.json', function(err, data) {
+        var json = JSON.parse(data);
+        json.orders.push(
+        {
+		"status": "pending",
+		"customer": username,
+		"cook": cook,
+		"deliveryGuy":"deliveryguy",
+		"store": currentStore,
+		"time": today,
+        "price": price,
+		"address":{
+			"lat":40.756868,
+			"lng":-73.985345
+			}
+        });
+    
+        console.log("Attempted to make an order");
+        fs.writeFile(__dirname+'/public/system/orders.json', JSON.stringify(json));
+    });
+});
 
 //check login
 app.get('/:storeName/:userType/:username/:password/checkLogin',function(req,res)
@@ -220,5 +231,6 @@ app.get('/get/file/:userType',function(req,res) {
     else
         res.status(404).send('404 not found');
 });
+
 
 app.listen(8080);
