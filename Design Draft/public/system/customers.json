@@ -4,6 +4,7 @@
       "username": "customer",
       "password": "test",
       "blacklisted":false,
+	  "photo-id":"http://www.zotei.com/product_images/plastic_card/photo_ID_card/photo_ID_card_04.jpg",
       "address":{
           "lat":40.765319,
           "lng":-73.993710
@@ -27,6 +28,7 @@
       "username": "donald",
       "password": "duck",
       "blacklisted":false,
+	  "photo-id":"http://www.zotei.com/product_images/plastic_card/photo_ID_card/photo_ID_card_04.jpg",
       "address":{
           "lat":40.765550,
           "lng": -73.992792
