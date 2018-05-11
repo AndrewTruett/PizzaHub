@@ -73,6 +73,38 @@ $(document).ready(function() {
     } catch(e) {
         console.log(e.toString());
     }
+    
+    var xmlHttp3 = new XMLHttpRequest();
+    
+    //Load employees
+    try{
+        xmlHttp3.open("GET", "get/file/deliveryGuys.json", true);
+        
+        xmlHttp3.onreadystatechange = function() {
+            if(xmlHttp3.readyState == 4) {
+                if(xmlHttp3.status == 200) { //Everything went okay
+                    console.log(JSON.parse(xmlHttp3.responseText));
+                    var json = JSON.parse(xmlHttp3.responseText);
+                    
+                    var currentStore = localStorage.getItem("currentStore").toLowerCase().trim().split(" ").join("_");//converts store name to lower case with underscores instead of spaces
+                    
+                    for(var i = 0; i<json.deliveryGuys.length; i++) {
+                        var username = json.deliveryGuys[i].username;
+                        
+                        if(json.deliveryGuys[i].store == currentStore && !json.deliveryGuys.laidOff)//user has to be member of this store
+                                $("#employee-list").append('<tr><th><input type = "checkbox" name="record"></th><th>'+username+'</th><th>'+json.deliveryGuys[i].rating+'</th></tr>'); 
+                    }
+                } else if (xmlHttp3.status == 404) {
+                    console.log("404 not found");
+                }
+            } 
+        };
+        
+        xmlHttp3.send(null);
+        
+    } catch(e) {
+        console.log(e.toString());
+    }
 });
 
 function populateLists(data) {
