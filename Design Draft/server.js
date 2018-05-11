@@ -61,7 +61,7 @@ app.get('/neworder/:username/:cook/:currentStore/:price/:today', function(req, r
 		"status": "pending",
 		"customer": username,
 		"cook": cook,
-		"deliveryGuy":"deliveryguy",
+		"deliveryGuy":"",
 		"store": currentStore,
 		"time": today,
         "price": price,
@@ -275,6 +275,30 @@ app.get('/setCooked/:time',function(req,res)
         fs.writeFile(__dirname+'/public/system/orders.json', JSON.stringify(json));
     });
 });
+
+app.get('/setDeliveryGuy/:time/:deliveryGuy',function(req,res)
+{
+	    fs.readFile(__dirname+'/public/system/orders.json', function(err, data) {
+        var json = JSON.parse(data);
+		var t = req.params.time;
+        var guy = req.params.deliverGuy;
+
+        console.log("Time sent:"+t);
+
+		for(var i=0; i<json.orders.length; i++)
+		{
+            console.log("Time: "+json.orders[i].time);
+			if(json.orders[i].time==t)
+			{
+				json.orders[i].deliverGuy = guy;
+			}
+		}
+
+        console.log("Setting new delivery guy");
+        fs.writeFile(__dirname+'/public/system/orders.json', JSON.stringify(json));
+    });
+});
+
 
 app.get('/approveAccount/:username/:store',function(req,res)
 {

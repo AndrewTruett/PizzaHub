@@ -2,6 +2,8 @@ $(document).ready(function() {
     var storeName = localStorage.getItem("currentStore");
     $(".store-heading").text(storeName);
     
+
+    
     var xmlHttp = new XMLHttpRequest();
     
     //Load employees

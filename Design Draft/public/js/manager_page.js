@@ -1,6 +1,9 @@
 $(document).ready(function() {
 
     $("#store-name").text(localStorage.getItem("currentStore"));
+    
+    var managerName = localStorage.getItem("username");
+    $("#manager-name").text(managerName);
 
     //Handling of active list items
     $(document).on("click", "li", function(e){
@@ -184,7 +187,7 @@ $(document).ready(function() {
                         for(var j = 0; j<json.customers[i].membership.length; j++) {
                             if(json.customers[i].membership[j].store == currentStore)//user has to be member of this store
                                 {
-                                  if (json.customers[i].membership[j].type == "pending")
+                                  if (json.customers[i].membership[j].type == "pending" && json.customers[i].deliveryGuy == "")
                                   {
                                     output += "<h1>"+username+"</h1>";
                                     output += "<a href="+json.customers[i].photoID+"> Click here to see photo ID </a>  <br>reviews from other stores<br>";
