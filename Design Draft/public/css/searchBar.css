@@ -94,6 +94,11 @@
 .green-color {
 	background-color: rgb(26, 188, 156);
 }
+
+.red-color
+{
+    background-color: rgb(204, 0, 0);
+}
 /*
 #navbar {
 	height: 150px;
