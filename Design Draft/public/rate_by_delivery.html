@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
+		<!--Title of the Page-->
+        <title>Pizza Hub | Order pizzas from top rated Manhattan stores</title>
+        
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<!--Bootstrap-->
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+        
+		<!--css-->
+		<!--<link href="css/searchButtonStore.css" rel="stylesheet"> -->
+        <link href="css/phStyle.css" rel="stylesheet"> 
+        <link href="css/searchBar.css" rel="stylesheet"> 
+        <!-- Load icon library -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">            <script src="js/review_page.js"></script>
+
+
+        
+    </head>
+    
+    <body>
+        <div class="container-fluid">
+		  <!--Navbar row-->
+		  <div class="row">
+		    <div class="col-7 black-color">
+              <div class="brand" id="logo">
+                <a href="index.html">
+                  <img src="img/phpaste.png" class="img-adjust">
+                </a>
+              </div>
+			</div>
+			
+			<div class="col green-color">
+			  <div class="" id="search-bar">
+              <input type="text" id="searchterm" placeholder="Looking for a store?..." />
+				<!--update this later: onclick should be updated-->
+              <button type="button" id="search" onclick="window.location.href='search_results.html'">Search</button>
+              </div>
+			</div>
+			
+		  </div>
+            
+            </div>
+           
+		  <!--Map msg row--> 
+		  <div class="row map-text sky-blue-color">
+			<div class="col text-center">
+				<p>Rate your experience from previous order</p>
+			</div>
+		  </div>
+		  
+		  <!--Map row-->
+		  <div class="row-3">
+
+            <div>
+            <div class="row map-text black-color">
+              <div class="col text-center">
+                        <p>Rate Customer</p>
+                    </div>
+		      </div>
+                
+                <div class="center rating">
+                <select id="rate-delivery" >
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                </div>
+
+                
+            </div>
+
+
+<!--
+              
+              <form>
+                  Please leave your comment here
+  <input type="text" name="cmnt" id="comment">
+              </form>
+              
+-->
+              
+<!--
+              <script>
+                  function checkRating()
+                  {
+                      var comment = $("#comment").val();
+                      var pizzaRate = parseInt($("#rate-pizza").val());
+                      var delivRate = parseInt($("#rate-delivery").val());
+    
+                      if(pizzaRate<3 || delivRate<3)
+                          {
+                            if(comment=="")
+                              {
+                                  alert("Please leave a comment");
+                              }
+                          }
+                      
+                      else
+                          {
+//                              window.location.href="store_page.html";
+                              $(location).attr('href', 'store_page.html');
+                          }
+                  }
+              </script>
+-->
+              
+              <button id="cust-review"><a href="delivery_page.html">Submit</a></button>
+		  </div>
+            
+        
+		  
+        
+        
+        
+  
+        	
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    </body>
+
+    
+</html>
