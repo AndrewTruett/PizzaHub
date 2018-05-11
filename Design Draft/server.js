@@ -232,5 +232,26 @@ app.get('/get/file/:userType',function(req,res) {
         res.status(404).send('404 not found');
 });
 
+app.get('/setDelivered/:time',function(req,res)
+{
+	    fs.readFile(__dirname+'/public/system/orders.json', function(err, data) {
+        var json = JSON.parse(data);
+		var t = req.params.time;
+		
+		for(var i=0; i<json.orders.length; i++)
+		{
+			if(json.orders[i].time==t)
+			{
+				json.orders[i].status = "delivered";
+			}
+		}
+    
+        console.log("updated order to delivered");
+        fs.writeFile(__dirname+'/public/system/orders.json', JSON.stringify(json));
+    });
+	
+});
+	
+
 
 app.listen(8080);
