@@ -53,7 +53,7 @@ app.get('/neworder/:username/:cook/:currentStore/:price/:today', function(req, r
     var today = req.params.today;
     var price = req.params.price;
     var specInstructions = req.params.specInstructions;
-    
+
     fs.readFile(__dirname+'/public/system/orders.json', function(err, data) {
         var json = JSON.parse(data);
         json.orders.push(
@@ -70,7 +70,7 @@ app.get('/neworder/:username/:cook/:currentStore/:price/:today', function(req, r
 			"lng":-73.985345
 			}
         });
-    
+
         console.log("Attempted to make an order");
         fs.writeFile(__dirname+'/public/system/orders.json', JSON.stringify(json));
     });
@@ -83,7 +83,7 @@ app.get('/:storeName/:userType/:username/:password/checkLogin',function(req,res)
     var password = req.params.password;
     var store = req.params.storeName;
     var userType = req.params.userType;
-    
+
     console.log("Checking login information for "+username+" with the password "+password+" at the store "+store+" as a "+userType+".");
 
     if(userType == "customer") {
@@ -118,13 +118,13 @@ app.get('/:storeName/:userType/:username/:password/checkLogin',function(req,res)
             }
 
         });
-        
+
     } else if (userType == "cook") {
         fs.readFile(__dirname+'/public/system/cooks.json', function(err, data) {
             var json = JSON.parse(data);
 
             var found = false;
-            
+
             for(var i=0; i<json.cooks.length && !found; i++)
             {
                 if (json.cooks[i].username == username)
@@ -136,7 +136,7 @@ app.get('/:storeName/:userType/:username/:password/checkLogin',function(req,res)
                     }
                 }
             }
-            
+
             if(found) {
                 console.log("Login was successful");
                 res.send("true");
@@ -144,16 +144,16 @@ app.get('/:storeName/:userType/:username/:password/checkLogin',function(req,res)
                 console.log("Login was not successful");
                 res.send("false");
             }
-            
-            
+
+
         });
-        
+
     } else if (userType == "manager") {
         fs.readFile(__dirname+'/public/system/managers.json', function(err, data) {
             var json = JSON.parse(data);
 
             var found = false;
-            
+
             for(var i=0; i<json.managers.length && !found; i++)
             {
                 if (json.managers[i].username == username)
@@ -165,7 +165,7 @@ app.get('/:storeName/:userType/:username/:password/checkLogin',function(req,res)
                     }
                 }
             }
-            
+
             if(found) {
                 console.log("Login was successful");
                 res.send("true");
@@ -173,16 +173,16 @@ app.get('/:storeName/:userType/:username/:password/checkLogin',function(req,res)
                 console.log("Login was not successful");
                 res.send("false");
             }
-            
-            
+
+
         });
-        
+
     } else if (userType == "deliveryGuy") {
         fs.readFile(__dirname+'/public/system/deliveryGuys.json', function(err, data) {
             var json = JSON.parse(data);
 
             var found = false;
-            
+
             for(var i=0; i<json.deliveryGuys.length && !found; i++)
             {
                 if (json.deliveryGuys[i].username == username)
@@ -194,7 +194,7 @@ app.get('/:storeName/:userType/:username/:password/checkLogin',function(req,res)
                     }
                 }
             }
-            
+
             if(found) {
                 console.log("Login was successful");
                 res.send("true");
@@ -202,8 +202,8 @@ app.get('/:storeName/:userType/:username/:password/checkLogin',function(req,res)
                 console.log("Login was not successful");
                 res.send("false");
             }
-            
-            
+
+
         });
     }
 });
@@ -211,25 +211,25 @@ app.get('/:storeName/:userType/:username/:password/checkLogin',function(req,res)
 //Returns json file of requested type of user.
 app.get('/get/file/:userType',function(req,res) {
     var userType = req.params.userType;
-    
-    if (userType == "customers.json") 
+
+    if (userType == "customers.json")
         res.sendFile(__dirname+'/public/system/customers.json');
-        
-     else if (userType == "managers.json") 
+
+     else if (userType == "managers.json")
         res.sendFile(__dirname+'/public/system/managers.json');
-        
-     else if (userType == "cooks.json") 
+
+     else if (userType == "cooks.json")
         res.sendFile(__dirname+'/public/system/cooks.json');
-        
-    else if (userType == "deliveryGuys.json") 
+
+    else if (userType == "deliveryGuys.json")
         res.sendFile(__dirname+'/public/system/deliveryGuys.json');
-        
-    else if (userType == "stores.json") 
+
+    else if (userType == "stores.json")
         res.sendFile(__dirname+'/public/system/stores.json');
-    
-    else if (userType == "orders.json") 
+
+    else if (userType == "orders.json")
         res.sendFile(__dirname+'/public/system/orders.json');
-        
+
     else
         res.status(404).send('404 not found');
 });
@@ -239,7 +239,7 @@ app.get('/setDelivered/:time',function(req,res)
 	    fs.readFile(__dirname+'/public/system/orders.json', function(err, data) {
         var json = JSON.parse(data);
 		var t = req.params.time;
-		
+
 		for(var i=0; i<json.orders.length; i++)
 		{
 			if(json.orders[i].time==t)
@@ -247,11 +247,11 @@ app.get('/setDelivered/:time',function(req,res)
 				json.orders[i].status = "delivered";
 			}
 		}
-    
+
         console.log("updated order to delivered");
         fs.writeFile(__dirname+'/public/system/orders.json', JSON.stringify(json));
     });
-	
+
 });
 
 app.get('/setCooked/:time',function(req,res)
@@ -259,9 +259,9 @@ app.get('/setCooked/:time',function(req,res)
 	    fs.readFile(__dirname+'/public/system/orders.json', function(err, data) {
         var json = JSON.parse(data);
 		var t = req.params.time;
-        
+
         console.log("Time sent:"+t);
-		
+
 		for(var i=0; i<json.orders.length; i++)
 		{
             console.log("Time: "+json.orders[i].time);
@@ -270,13 +270,38 @@ app.get('/setCooked/:time',function(req,res)
 				json.orders[i].status = "cooked";
 			}
 		}
-    
+
         console.log("updated order to cooked");
         fs.writeFile(__dirname+'/public/system/orders.json', JSON.stringify(json));
     });
-	
 });
-	
+
+app.get('/approveAccount/:username/:store',function(req,res)
+{
+    fs.readFile(__dirname+'/public/system/customers.json', function(err, data)
+    {
+      var json = JSON.parse(data);
+      var username = req.params.username;
+      var store = req.params.store;
+
+      for (var i = 0; i <json.customers.length; i++)
+      {
+        if (json.customers[i].username == username)
+        {
+          for (var j = 0; j < json.customers[j].membership.lenth; j++)
+          {
+            if (json.customers[i].membership[j].store == store)
+            {
+              json.customers[i].membership[j].type = "member";
+            }
+
+          }
+        }
+
+      }
+    });
+});
+
 
 
 app.listen(8080);
