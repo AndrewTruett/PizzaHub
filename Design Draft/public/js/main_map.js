@@ -1,22 +1,34 @@
 var mapCenter = {lat:40.756868,lng:-73.985345}
 
+// var garlicNewYorkPizzaBar = {lat: 40.745237, lng: -73.975891,name:"Garlic New York Pizza Bar",strName:"garlic_new_york_pizza_bar"};
+// var famousAmadeusPizza = {lat: 40.749902, lng: -73.994903,name:"Famous Amadeus Pizza",strName:"famous_amadeus_pizza"};
+// var donHyder = {lat: 40.757201, lng: -73.989968,name:"Don Hyder",strName:"don_hyder"};
+// var littleItalyPizza = {lat: 40.747675, lng: -73.984818,name:"Little Italy Pizza",strName:"little_italy_pizza"};
+var angelosPizza = {lat: 40.763813, lng: -73.982946,name:"Angelos Pizza",strName:"angelos_pizza"}
+var mariellaPizza = {lat: 40.765775, lng: -73.983938,name:"Mariella Pizza",strName:"mariella_pizza"}
 //note: variables that are commented out to be used in future "final" update
 
 //upper mid-manhattan
-var garlicNewYorkPizzaBar = {lat: 40.745237, lng: -73.975891};
-var famousAmadeusPizza = {lat: 40.749902, lng: -73.994903};
+var garlicNewYorkPizzaBar = {lat: 40.745237, lng: -73.975891,name:"Garlic New York Pizza Bar",strName:"garlic_new_york_pizza_bar"};
+var famousAmadeusPizza = {lat: 40.749902, lng: -73.994903,name:"Famous Amadeus Pizza",strName:"famous_amadeus_pizza"};
+// var garlicNewYorkPizzaBar = {lat: 40.745237, lng: -73.975891};
+// var famousAmadeusPizza = {lat: 40.749902, lng: -73.994903};
 //var nyPizzaSuprema = {lat: 40.750211, lng: -73.995289};
 
 //mid mid-manhttan
-var donHyder = {lat: 40.757201, lng: -73.989968};
-var littleItalyPizza = {lat: 40.747675, lng: -73.984818};
+var donHyder = {lat: 40.757201, lng: -73.989968,name:"Don Hyder",strName:"don_hyder"};
+var littleItalyPizza = {lat: 40.747675, lng: -73.984818,name:"Little Italy Pizza",strName:"little_italy_pizza"};
+// var donHyder = {lat: 40.757201, lng: -73.989968};
+// var littleItalyPizza = {lat: 40.747675, lng: -73.984818};
 //var theOriginalLittleItalyPizza = {lat: 40.754031, lng: -73.979743};
 //var unclePaulsPizza = {lat: 40.754885, lng: -73.976900};
 //var capizzi = {lat: 40.757583, lng: -73.993605};
 
 //lower mid-manhattan
-var angelosPizza = {lat: 40.763813, lng: -73.982946}
-var mariellaPizza = {lat: 40.765775, lng: -73.983938}
+var angelosPizza = {lat: 40.763813, lng: -73.982946,name:"Angelos Pizza",strName:"angelos_pizza"}
+var mariellaPizza = {lat: 40.765775, lng: -73.983938,name:"Mariella Pizza",strName:"mariella_pizza"}
+// var angelosPizza = {lat: 40.763813, lng: -73.982946}
+// var mariellaPizza = {lat: 40.765775, lng: -73.983938}
 //var donAntonio = {lat: 40.762743, lng: -73.986717}
 //var pizzaHut = {lat: 40.761110, lng: -73.982865}
 
