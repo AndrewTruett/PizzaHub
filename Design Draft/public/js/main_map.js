@@ -187,6 +187,7 @@ function login() {
                 if(xmlHttp.readyState == 4) {
                     if(xmlHttp.status == 200) { //Everything went okay
                         console.log("Successful login: "+xmlHttp.responseText);
+                        localStorage.setItem("username", userNameStr);
 
                         if(xmlHttp.responseText == "true") {
 
