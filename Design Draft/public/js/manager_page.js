@@ -165,7 +165,7 @@ $(document).ready(function() {
     /////************
     var xmlHttp10 = new XMLHttpRequest();
 
-    //Load customers
+    //load pending customers
     try{
         xmlHttp10.open("GET", "get/file/customers.json", true);
 
@@ -199,9 +199,6 @@ $(document).ready(function() {
                                 }
                         }
                     }
-
-
-                    // $("#pending-customers").append('<tr><th><input type = "checkbox" name="record"></th><th>'+username+'</th><th>'+json.customers[i].membership[j].rating+'</th></tr>');
 
                 } else if (xmlHttp10.status == 404) {
                     console.log("404 not found");
@@ -249,3 +246,10 @@ function sendToDeliveryGuy() {
     //$("#active").remove();
     document.location.reload(true);
 }
+
+
+// function approveNewAccount()
+// {
+//   var currentStore = localStorage.getItem("currentStore").toLowerCase().trim().split(" ").join("_");//converts store name to lower case with underscores instead of spaces
+//   var member =
+// }
