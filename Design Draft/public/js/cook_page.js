@@ -38,7 +38,8 @@ function processOrder() {
       console.log(e.toString());
   }
     
-    
+    //$("#active").remove();
+    document.location.reload(true);
 }
 
 function checkForOrders() {
