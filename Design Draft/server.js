@@ -195,4 +195,27 @@ app.get('/:storeName/:userType/:username/:password/checkLogin',function(req,res)
     }
 });
 
+//Returns json file of requested type of user.
+app.get('/get/file/:userType',function(req,res) {
+    var userType = req.params.userType;
+    
+    if (userType == "customers.json") 
+        res.sendFile(__dirname+'/public/system/customers.json');
+        
+     else if (userType == "managers.json") 
+        res.sendFile(__dirname+'/public/system/managers.json');
+        
+     else if (userType == "cooks.json") 
+        res.sendFile(__dirname+'/public/system/cooks.json');
+        
+    else if (userType == "deliveryGuys.json") 
+        res.sendFile(__dirname+'/public/system/deliverGuys.json');
+        
+    else if (userType == "stores.json") 
+        res.sendFile(__dirname+'/public/system/stores.json');
+        
+    else
+        res.status(404).send('404 not found');
+});
+
 app.listen(8080);
