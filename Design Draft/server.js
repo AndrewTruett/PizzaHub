@@ -26,7 +26,7 @@ app.get('/:storename/newuser/:username/:password/:photourl', function(req, res) 
             "username": username,
             "password": password,
             "blacklisted":false,
-			"photo-id":photourl,
+			"photoID":photourl,
             "address":{
                 "lat":40.765319,
                 "lng":-73.993710
