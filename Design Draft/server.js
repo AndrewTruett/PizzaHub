@@ -136,6 +136,33 @@ app.get('/:storeName/:userType/:username/:password/checkLogin',function(req,res)
         });
         
     } else if (userType == "manager") {
+        fs.readFile(__dirname+'/public/system/managers.json', function(err, data) {
+            var json = JSON.parse(data);
+
+            var found = false;
+            
+            for(var i=0; i<json.managers.length && !found; i++)
+            {
+                if (json.managers[i].username == username)
+                {
+                    if (json.managers[i].password == password)
+                    {
+                        if (json.managers[i].store == store)
+                            found = true;
+                    }
+                }
+            }
+            
+            if(found) {
+                console.log("Login was successful");
+                res.send("true");
+            } else {
+                console.log("Login was not successful");
+                res.send("false");
+            }
+            
+            
+        });
         
     } else if (userType == "deliveryGuy") {
         
