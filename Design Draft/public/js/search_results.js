@@ -52,7 +52,17 @@ $(document).ready(function()
        }
      }
 
-
+     if (counter==0)
+     {
+          document.getElementById('search-result-counter').innerHTML = '<h2>No Matches Found!</h2>';
+     }
+     else if (counter==1)
+     {
+       document.getElementById('search-result-counter').innerHTML = '<h2>1 Match Found!</h2>';
+     }
+     else {
+       document.getElementById('search-result-counter').innerHTML = '<h2>'+counter+' Matches Found!</h2>';
+     }
 
      document.getElementById('search-results').innerHTML = output;
    };
