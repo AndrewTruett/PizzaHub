@@ -18,6 +18,7 @@
         <link href="css/searchBar.css" rel="stylesheet">
         <link href="css/search.css" rel="stylesheet">
         
+        
         <!-- Load icon library -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         
@@ -58,8 +59,7 @@
                         <p>Search Results</p>
                     </div>
 		      </div>
-                <span>Click on the map to get the nearest stores</span>
-                
+
                 <div>
                     <p id="search-result-counter"></p>
                 </div>
@@ -68,6 +68,48 @@
 
                 </div>
             </div>
+          
+          
+                          <!-- Login Modal -->
+                <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title login-store-name" id="loginModalLabel">Store Name Here</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body login-body">               
+                            <span class="col-4">Login as a </span> 
+                                <select id="type-selection" class="col-8">
+                                  <option value="customer">VIP / Member</option>
+<!--                                  <option value="visitor">Visitor</option>-->
+                                  <option value="manager">Manager</option>
+                                  <option value="cook">Cook</option>
+                                  <option value="deliveryGuy">Delivery Guy</option>
+                                </select>
+
+                            <br/>
+                            <span class="col-4">Username </span>
+                            <input id="username" type="text" name="lastname" class="col-8">
+                            <br/>
+                            <span class="col-4">Password  </span>
+                            <input id="password" type="password" name="lastname" style="font-size: 100%" class="col-8">
+
+                            <br/>
+                            <br/>
+                            Not a member yet? <a href="create_account.html">Create a new account</a>
+                            <br/> If you don't want to create an account, <a onclick="continueAsAVisitor()" href="store_page.html">Continue as a visitor</a>
+
+                      </div>
+                      <div class="modal-footer login-body">
+                        <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-outline-success" onclick="login();">Login</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
           
 
 		  
