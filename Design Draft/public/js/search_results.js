@@ -3,7 +3,7 @@ $(document).ready(function()
    var searchResults = function()
    {
      var searchedItem = localStorage.getItem("searchedtStore").toLowerCase();
-     alert(searchedItem);
+     // alert(searchedItem);
 
 //future updates will feature show results by store name + key words+ famous menus
       var stores= [
@@ -39,13 +39,22 @@ $(document).ready(function()
         }
       ];
 
+
+     var output = "";
+     var counter = 0;
      for (var i=0; i<stores.length; i++)
      {
        if(searchedItem == stores[i].keyword.toLowerCase())
        {
-         alert(searchedItem+ ' found');
+         counter = counter+1;
+         // alert(searchedItem+ ' found');
+         output += '<li> <span class="mm-store-name"><button type="button" class="btn" data-toggle="modal" data-target="#loginModal" onclick="saveStoreNameNearestStores()" id="login-btn">'+stores[i].keyword+'</button></span></li>'
        }
      }
+
+
+
+     document.getElementById('search-results').innerHTML = output;
    };
 
    searchResults();
