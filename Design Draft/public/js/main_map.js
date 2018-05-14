@@ -234,6 +234,9 @@ var getSearchStoreName = function()
 {
   var searchStoreName = $("#search-by-address").val();
   alert(searchStoreName);
+  localStorage.setItem("searchedtStore", searchStoreName);
+  window.location.href = "search_results.html";
+
 
 }
 
