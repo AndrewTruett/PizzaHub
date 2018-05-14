@@ -2,7 +2,7 @@ $(document).ready(function()
 {
    var searchResults = function()
    {
-     var searchedItem = localStorage.getItem("searchedtStore");
+     var searchedItem = localStorage.getItem("searchedtStore").toLowerCase();
      alert(searchedItem);
 
 //future updates will feature show results by store name + key words+ famous menus
@@ -41,7 +41,10 @@ $(document).ready(function()
 
      for (var i=0; i<stores.length; i++)
      {
-       //pass
+       if(searchedItem == stores[i].keyword.toLowerCase())
+       {
+         alert(searchedItem+ ' found');
+       }
      }
    };
 
