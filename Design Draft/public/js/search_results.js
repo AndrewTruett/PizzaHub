@@ -48,7 +48,7 @@ $(document).ready(function()
        {
          counter = counter+1;
          // alert(searchedItem+ ' found');
-         output += '<li> <span class="mm-store-name"><button type="button" class="btn" data-toggle="modal" data-target="#loginModal" onclick="saveStoreNameNearestStores()" id="login-btn">'+stores[i].keyword+'</button></span></li>'
+         output += '<li> <span class="mm-store-name"><button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#loginModal" onclick="saveStoreNameNearestStores()" id="login-btn">'+stores[i].keyword+'</button></span></li>'
        }
      }
 
