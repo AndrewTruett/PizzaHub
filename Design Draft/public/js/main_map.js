@@ -230,6 +230,13 @@ function login() {
 }
 //************************************************************
 
+var getSearchStoreName = function()
+{
+  var searchStoreName = $("#search-by-address").val();
+  alert(searchStoreName);
+
+}
+
 
 
 var getDistance = function(place1,place2)
