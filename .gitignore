@@ -104,3 +104,4 @@ ENV/
 Design Draft/node_modules/
 Design Draft/package.json
 Design Draft/package-lock.json
+.DS_Store
