@@ -9,7 +9,6 @@ A group project for Software Engineering course at CCNY. A Mid-Manhattan pizza o
 | `npm install express --save` | installing express and save it in the dependencies |
 
 ### UML Diagram
-UML Diagram:
 <img src=".//ph-uml-diag.png">
 
 
