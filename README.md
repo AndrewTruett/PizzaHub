@@ -10,5 +10,5 @@ A group project for Software Engineering course at CCNY. A Mid-Manhattan pizza o
 
 ### UML Diagram
 ![UML of PizzaHub]
-(/ph-uml-diag.png?raw=true)
+(ph-uml-diag.png?raw=true)
 
